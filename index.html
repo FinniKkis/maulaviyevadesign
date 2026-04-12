@@ -1,0 +1,2069 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio</title>
+  <style>
+    @font-face {
+      font-family: 'ShlapakScript';
+      src: url('fonts/Shlapak Script.otf') format('opentype');
+      font-weight: normal;
+      font-style: normal;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      width: 100%;
+      background: #fff;
+      overflow-x: hidden;
+    }
+
+    .scale-wrapper {
+      width: 100%;
+      position: relative;
+    }
+
+    .main-section {
+      position: relative;
+      width: 1920px;
+      height: 1700px;
+      background: #ffffff;
+      transform-origin: top left;
+      overflow: hidden;
+    }
+
+    /* ── Fall-in animation ── */
+    @keyframes fallIn {
+      0% {
+        opacity: 0;
+        transform: translateY(-600px) rotate(var(--wobble, 0deg));
+      }
+      55% {
+        opacity: 1;
+      }
+      75% {
+        transform: translateY(18px) rotate(calc(var(--wobble, 0deg) * -0.25));
+      }
+      88% {
+        transform: translateY(-7px) rotate(1deg);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0px) rotate(0deg);
+      }
+    }
+
+    @keyframes textAppear {
+      0% {
+        opacity: 0;
+        transform: translateY(-80px);
+        filter: blur(6px);
+      }
+      60% {
+        filter: blur(0px);
+      }
+      80% {
+        transform: translateY(10px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+        filter: blur(0px);
+      }
+    }
+
+    .img-item {
+      position: absolute;
+      opacity: 0;
+      animation: fallIn 0.65s cubic-bezier(0.22, 0.61, 0.36, 1) forwards;
+      animation-delay: var(--delay, 0s);
+    }
+
+    .img-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .main-text {
+      position: absolute;
+      font-family: 'ShlapakScript', cursive;
+      font-size: 300px;
+      line-height: 1;
+      white-space: nowrap;
+      pointer-events: none;
+      user-select: none;
+      opacity: 0;
+      animation: textAppear 0.9s cubic-bezier(0.22, 0.61, 0.36, 1) forwards;
+    }
+
+    .main-text.shadow {
+      left: 318px;
+      top: 537px;
+      color: rgba(0, 0, 0, 0.18);
+      animation-delay: 2.3s;
+    }
+
+    .main-text.front {
+      left: 288px;
+      top: 557px;
+      color: #1a1a1a;
+      animation-delay: 2.35s;
+    }
+  </style>
+</head>
+<body>
+
+<div class="scale-wrapper" id="scaleWrapper">
+  <section class="main-section" id="mainSection">
+
+    <!-- img 13: IMG_2142 (hand collage) — top-left corner -->
+    <div class="img-item" style="top:-43px; left:-37px; width:404px; height:539px; --delay:0.05s; --wobble:-4deg;">
+      <img src="imgMain/IMG_2142 1.png" alt="collage">
+    </div>
+
+    <!-- img 6: IMG_2119 (orange pattern) — upper-right -->
+    <div class="img-item" style="top:364px; left:1219px; width:470px; height:264px; --delay:0.22s; --wobble:3deg;">
+      <img src="imgMain/IMG_2119 1.png" alt="pattern">
+    </div>
+
+    <!-- img 11: IMG_2150 (Дерево и вода) — top-right corner -->
+    <div class="img-item" style="top:-90px; left:1380px; width:650px; height:606px; --delay:0.38s; --wobble:-2deg;">
+      <img src="imgMain/IMG_2150 1.png" alt="дерево и вода">
+    </div>
+
+    <!-- img 8: IMG_2139 (Вечер чая) — top-center -->
+    <div class="img-item" style="top:-37px; left:750px; width:413px; height:550px; --delay:0.54s; --wobble:5deg;">
+      <img src="imgMain/IMG_2139 1.png" alt="вечер чая">
+    </div>
+
+    <!-- img 5: IMG_2151 (Текстура / grape) — top area -->
+    <div class="img-item" style="top:30px; left:520px; width:218px; height:270px; --delay:0.68s; --wobble:-6deg;">
+      <img src="imgMain/IMG_2151 1.png" alt="текстура">
+    </div>
+
+    <!-- img 12: IMG_2144 (наливай чайку) — upper-left-center -->
+    <div class="img-item" style="top:274px; left:400px; width:297px; height:396px; --delay:0.82s; --wobble:3.5deg;">
+      <img src="imgMain/IMG_2144 1.png" alt="наливай чайку">
+    </div>
+
+    <!-- img 4: martin-woortman (grid/lined paper) — left middle -->
+    <div class="img-item" style="top:562px; left:65px; width:193px; height:213px; --delay:0.96s; --wobble:-5deg;">
+      <img src="imgMain/martin-woortman-8mOOkJ45B3M-unsplash 1.png" alt="grid">
+    </div>
+
+    <!-- img 2: IMG_2137 (green hills + birds) — right side -->
+    <div class="img-item" style="top:735px; left:1497px; width:324px; height:488px; --delay:1.1s; --wobble:4deg;">
+      <img src="imgMain/IMG_2137 1.png" alt="nature">
+    </div>
+
+    <!-- img 10: IMG_2136 (chess/numbers collage) — center-right -->
+    <div class="img-item" style="top:921px; left:974px; width:334px; height:417px; --delay:1.24s; --wobble:-3deg;">
+      <img src="imgMain/IMG_2136 1.png" alt="collage numbers">
+    </div>
+
+    <!-- img 7: IMG_2118 (blue streaks) — left side -->
+    <div class="img-item" style="top:1011px; left:-120px; width:370px; height:277px; --delay:1.38s; --wobble:6deg;">
+      <img src="imgMain/IMG_2118 1.png" alt="blue">
+    </div>
+
+    <!-- img 3: IMG_2132 (forest/birch trees) — lower-left -->
+    <div class="img-item" style="top:1122px; left:330px; width:450px; height:500px; --delay:1.52s; --wobble:-4deg;">
+      <img src="imgMain/IMG_2132 1.png" alt="forest">
+    </div>
+
+    <!-- img 9: IMG_2134 (Этапы развития) — bottom-right -->
+    <div class="img-item" style="top:1250px; left:1279px; width:650px; height:371px; --delay:1.66s; --wobble:2.5deg;">
+      <img src="imgMain/IMG_2134 1.png" alt="этапы развития">
+    </div>
+
+    <!-- img 1: photo_5941464 (dark window + agate) — bottom-center -->
+    <div class="img-item" style="top:1380px; left:782px; width:430px; height:240px; --delay:1.8s; --wobble:-3.5deg;">
+      <img src="imgMain/photo_5941464016066645274_w 1.png" alt="window">
+    </div>
+
+    <!-- Text layers (behind some images, in front of others) -->
+    <div class="main-text shadow">подизайним?</div>
+    <div class="main-text front">подизайним?</div>
+  </section>
+</div>
+
+<script>
+  function scaleSection() {
+    const section = document.getElementById('mainSection');
+    const wrapper = document.getElementById('scaleWrapper');
+    const scale = window.innerWidth / 1920;
+    section.style.transform = 'scale(' + scale + ')';
+    wrapper.style.height = (1700 * scale) + 'px';
+  }
+
+  scaleSection();
+  window.addEventListener('resize', scaleSection);
+</script>
+
+<!-- ═══════════════════════════════════════════════════ -->
+<!--              SECTION 2 — About me                  -->
+<!-- ═══════════════════════════════════════════════════ -->
+
+<style>
+  @font-face {
+    font-family: 'Evolventa';
+    src: url('fonts/Evolventa-Regular.otf') format('opentype');
+    font-weight: 400;
+  }
+  @font-face {
+    font-family: 'Evolventa';
+    src: url('fonts/Evolventa-Bold.otf') format('opentype');
+    font-weight: 700;
+  }
+  @font-face {
+    font-family: 'Evolventa';
+    src: url('fonts/Evolventa-BoldOblique.otf') format('opentype');
+    font-weight: 800;
+  }
+
+  /* ── About section wrapper ── */
+  .about-wrapper {
+    width: 100%;
+    position: relative;
+    background: #fff;
+  }
+
+  .about-section {
+    position: relative;
+    width: 1920px;
+    height: 1280px;
+    background: #fff;
+    transform-origin: top left;
+    overflow: hidden;
+  }
+
+  /* ── Title ── */
+  .about-title {
+    position: absolute;
+    top: -40px;
+    left: 64px;
+    font-family: 'ShlapakScript', cursive;
+    font-size: 170px;
+    line-height: 1;
+    color: #1a1a1a;
+    white-space: nowrap;
+    z-index: 10;
+    opacity: 0;
+    animation: aboutTitleIn 1s cubic-bezier(0.22, 0.61, 0.36, 1) 0.2s forwards;
+  }
+
+  @keyframes aboutTitleIn {
+    from { opacity: 0; transform: translateY(-30px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ── Photo ── */
+  .about-photo {
+    position: absolute;
+    left: 0;
+    top: 200px;
+    width: 1080px;
+    height: 1080px;
+    z-index: 1;
+    opacity: 0;
+    animation: photoFadeIn 1.1s ease 0.5s forwards;
+  }
+
+  @keyframes photoFadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+  }
+
+  .about-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    display: block;
+  }
+
+  /* ── Sliding text panel ── */
+  .text-panel {
+    position: absolute;
+    right: 0;
+    top: 200px;
+    width: 1353px;
+    height: 1080px;
+    z-index: 5;
+    transform: translateX(110%);
+    transition: transform 1.1s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .text-panel.visible {
+    transform: translateX(0);
+  }
+
+  .text-panel svg {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  /* ── Achievements list ── */
+  .achievements {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1920px;
+    height: 1080px;
+  }
+
+  /* Each item sits in its SVG-step zone, absolutely positioned */
+  .ach-item {
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 12px;
+    padding: 0 20px 0 24px;
+    opacity: 0;
+    transition: opacity 0.15s ease;
+  }
+
+  .ach-item.show { opacity: 1; }
+
+  /* ── Per-item positions: top follows SVG step y-zones, left = step x ── */
+  /* width = 1353px (panel) - left - 30px right margin — prevents overflow  */
+  #ach0  { top: 4px; left: 161px; width: calc(1353px - 161px - 30px); } /* ach1 row A */
+  #ach1  { top:  76px; left: 281px; width: calc(1353px - 281px - 30px); } /* ach1 row B */
+  #ach2  { top: 194px; left:  40px; width: calc(1353px -  40px - 30px); } /* ach2 row A */
+  #ach3  { top: 256px; left: 271px; width: calc(1353px - 271px - 30px); } /* ach2 row B */
+  #ach4  { top: 384px; left: 261px; width: calc(1353px - 261px - 30px); } /* ach3 row A */
+  #ach5  { top: 454px; left: 130px; width: calc(1353px - 150px - 30px); } /* ach3 row B */
+  #ach6  { top: 580px; left:  66px; width: calc(1353px -  66px - 30px); } /* ach4 row A */
+  #ach7  { top: 638px; left: 249px; width: calc(1353px - 249px - 30px); } /* ach4 row B */
+  #ach8  { top: 750px; left:   0px; width: calc(1353px -   0px - 30px); } /* ach5 row A */
+  #ach9  { top: 814px; left: 350px; width: calc(1353px - 109px - 30px); } /* ach5 row B */
+  #ach10 { top: 948px; left: 200px; width: calc(1353px - 200px - 30px); } /* ach6 row A */
+  #ach11 { top: 1020px; left: 137px; width: calc(1353px - 137px - 30px); } /* ach6 row B */
+
+  .ach-num {
+    font-family: 'Evolventa', sans-serif;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 1;
+    color: #1a1a1a;
+    min-width: 44px;
+    flex-shrink: 0;
+  }
+
+  .ach-text {
+    font-family: 'Evolventa', sans-serif;
+    font-weight: 400;
+    font-size: 40px;
+    line-height: 1.45;
+    color: #1a1a1a;
+    flex: 1;       /* fill remaining flex space */
+    min-width: 0;  /* allow shrink — fixes flex overflow */
+    word-break: keep-all;
+  }
+
+  /* blinking cursor */
+  .ach-text.typing::after {
+    content: '|';
+    display: inline;
+    animation: blink 0.7s step-end infinite;
+    font-weight: 400;
+    color: #1a1a1a;
+  }
+
+  @keyframes blink {
+    0%, 100% { opacity: 1; }
+    50%       { opacity: 0; }
+  }
+</style>
+
+<div class="about-wrapper" id="aboutWrapper">
+  <section class="about-section" id="aboutSection">
+
+    <div class="about-title">обо мне + мои достижения</div>
+
+    <div class="about-photo">
+      <img src="imgMain/Alia.png" alt="Alia">
+    </div>
+
+    <div class="text-panel" id="textPanel">
+      <!-- SVG stepped background -->
+      <svg viewBox="0 0 1353 1080" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+        <path d="M1353 1080H137V1008H200V943H109V871H463V816H0V744H463V700H249V645H66V573H463V519H134V447H261V375H463V320H274V259H41V187H463V144H285V72H161V0H1353V1080Z" fill="#ffffff"/>
+      </svg>
+
+      <!-- Text content: 12 items = 6 achievements × 2 rows each -->
+      <div class="achievements" id="achievements">
+
+        <!-- Achievement 1 -->
+        <div class="ach-item" id="ach0">
+          <div class="ach-num">1</div>
+          <div class="ach-text" id="achText0"></div>
+        </div>
+        <div class="ach-item" id="ach1">
+          <div class="ach-text" id="achText1"></div>
+        </div>
+
+        <!-- Achievement 2 -->
+        <div class="ach-item" id="ach2">
+          <div class="ach-num">2</div>
+          <div class="ach-text" id="achText2"></div>
+        </div>
+        <div class="ach-item" id="ach3">
+          <div class="ach-text" id="achText3"></div>
+        </div>
+
+        <!-- Achievement 3 -->
+        <div class="ach-item" id="ach4">
+          <div class="ach-num">3</div>
+          <div class="ach-text" id="achText4"></div>
+        </div>
+        <div class="ach-item" id="ach5">
+          <div class="ach-text" id="achText5"></div>
+        </div>
+
+        <!-- Achievement 4 -->
+        <div class="ach-item" id="ach6">
+          <div class="ach-num">4</div>
+          <div class="ach-text" id="achText6"></div>
+        </div>
+        <div class="ach-item" id="ach7">
+          <div class="ach-text" id="achText7"></div>
+        </div>
+
+        <!-- Achievement 5 -->
+        <div class="ach-item" id="ach8">
+          <div class="ach-num">5</div>
+          <div class="ach-text" id="achText8"></div>
+        </div>
+        <div class="ach-item" id="ach9">
+          <div class="ach-text" id="achText9"></div>
+        </div>
+
+        <!-- Achievement 6 -->
+        <div class="ach-item" id="ach10">
+          <div class="ach-num">6</div>
+          <div class="ach-text" id="achText10"></div>
+        </div>
+        <div class="ach-item" id="ach11">
+          <div class="ach-text" id="achText11"></div>
+        </div>
+
+      </div>
+    </div>
+
+  </section>
+</div>
+
+<script>
+  /* ── Scale about section ── */
+  function scaleAbout() {
+    const section = document.getElementById('aboutSection');
+    const wrapper = document.getElementById('aboutWrapper');
+    const scale = window.innerWidth / 1920;
+    section.style.transform = 'scale(' + scale + ')';
+    wrapper.style.height = (1280 * scale) + 'px';
+  }
+  scaleAbout();
+  window.addEventListener('resize', scaleAbout);
+
+  /* ── Achievement texts ── */
+  const achData = [
+    'выступила в роли лид-дизайнера в проекте', '«Места Москвы» и создала для них визуал',
+    'заняла 1-е место в хакатоне, за 48 часов разработав', 'полноценную айдентику бренда',
+    'упаковала визуальную стратегию для блогера', 'с аудиторией 1 млн+, что увеличило продажи курса',
+    'мой итоговый проект был признан лучшим при выпуске', 'из школы дизайнеров Top academy',
+    'окончила продвинутый курс по анимационному монтажу', 'от топ-агентства Furor',
+    'прошла интенсив по дизайну в Yudaev.school,', 'внедрив в работу современные техники композиции'
+  ];
+
+  /* ── Typewriter ── */
+  function startTypewriter() {
+    let itemIdx = 0;
+    let charIdx = 0;
+
+    function typeStep() {
+      if (itemIdx >= achData.length) return;
+
+      const el = document.getElementById('achText' + itemIdx);
+      const item = document.getElementById('ach' + itemIdx);
+
+      /* Show the row */
+      if (charIdx === 0) {
+        item.classList.add('show');
+        el.classList.add('typing');
+      }
+
+      const fullText = achData[itemIdx];
+
+      if (charIdx < fullText.length) {
+        el.textContent = fullText.slice(0, charIdx + 1);
+        charIdx++;
+        setTimeout(typeStep, 4);
+      } else {
+        /* Item done — remove cursor, pause, move to next */
+        el.classList.remove('typing');
+        itemIdx++;
+        charIdx = 0;
+        setTimeout(typeStep, 32);
+      }
+    }
+
+    typeStep();
+  }
+
+  /* ── IntersectionObserver — trigger on scroll ── */
+  const textPanel = document.getElementById('textPanel');
+  let aboutAnimated = false;
+
+  const aboutObserver = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting && !aboutAnimated) {
+        aboutAnimated = true;
+        /* Slide panel in */
+        textPanel.classList.add('visible');
+        /* Start typewriter after panel arrives */
+        setTimeout(startTypewriter, 1200);
+        aboutObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15 });
+
+  aboutObserver.observe(document.getElementById('aboutSection'));
+</script>
+
+
+<!-- ═══════════════════════════════════════════════════ -->
+<!--           SECTION 3 — Мои компетенции              -->
+<!-- ═══════════════════════════════════════════════════ -->
+
+<style>
+  .skills-wrapper {
+    width: 100%;
+    position: relative;
+    background: #fff;
+  }
+
+  .skills-section {
+    position: relative;
+    width: 1920px;
+    height: 1120px;
+    background: #fff;
+    transform-origin: top left;
+    overflow: hidden;
+  }
+
+  /* ── Folder image ── */
+  .sk-folder {
+    position: absolute;
+    top: 30px;
+    left: 200px;
+    width: 420px;
+    opacity: 0;
+    transform: translateX(-40px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+  .sk-folder img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  .sk-folder.sk-on { opacity: 1; transform: translateX(0); }
+
+  /* ── "Мои компетенции:" label ── */
+  .sk-heading {
+    position: absolute;
+    top: 410px;
+    left: 240px;
+    font-family: 'Evolventa', sans-serif;
+    font-weight: 400;
+    font-size: 44px;
+    color: #1a1a1a;
+    white-space: nowrap;
+    opacity: 0;
+    transform: translateX(-40px);
+    transition: opacity 0.7s ease 0.25s, transform 0.7s ease 0.25s;
+  }
+  .sk-heading.sk-on { opacity: 1; transform: translateX(0); }
+
+  /* ── Tool list ── */
+  .sk-tools {
+    position: absolute;
+    top: 520px;
+    left: 240px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    opacity: 0;
+    transform: translateX(-40px);
+    transition: opacity 0.7s ease 0.45s, transform 0.7s ease 0.45s;
+  }
+  .sk-tools.sk-on { opacity: 1; transform: translateX(0); }
+
+  .tool-row {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+  }
+
+  .tool-icon {
+    width: 62px;
+    height: 62px;
+    object-fit: contain;
+    flex-shrink: 0;
+  }
+
+  .skill-dots {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+  }
+
+  .sk-dot {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: #484848;
+    flex-shrink: 0;
+  }
+  .sk-dot.empty { background: #D9D9D9; }
+
+  /* ── Competency boxes — highlighted text effect matching SVG ── */
+  /*
+     SVG structure (584×102):
+       - rect y=22 h=80  fill=#CBD9EE  (the highlight body)
+       - left  line x=6   y=15→102  stroke=#5A79AA  w=3
+       - right line x=577 y=15→102  stroke=#5A79AA  w=3
+       - top-left  circle cx=8   cy=8 r=8  fill=#5A79AA
+       - top-right circle cx=576 cy=8 r=8  fill=#5A79AA
+  */
+  .comp-box {
+    position: absolute;
+    /* All boxes share the same left edge → text is left-aligned */
+    left: 1000px;
+
+    /* Total height = dot-area (20px) + fill-area (68px) = 88px */
+    height: 88px;
+    padding-top: 20px;          /* pushes content below the dot/line overhang */
+    padding-left: 36px;
+    padding-right: 36px;
+
+    display: flex;
+    align-items: center;
+    text-align: left;
+
+    /* Highlighted fill only in the lower 68px */
+    background: linear-gradient(to bottom, transparent 20px, #CBD9EE 20px);
+
+    /* Left & right vertical lines (no top/bottom border) */
+    border-left:  3px solid #5A79AA;
+    border-right: 3px solid #5A79AA;
+
+    font-family: 'Evolventa', sans-serif;
+    font-weight: 400;
+    font-size: 40px;
+    color: #1a1a1a;
+    white-space: nowrap;
+
+    opacity: 0;
+    transform: translateX(70px);
+    transition: opacity 0.55s cubic-bezier(0.22, 0.61, 0.36, 1),
+                transform 0.55s cubic-bezier(0.22, 0.61, 0.36, 1);
+  }
+
+  .comp-box.sk-on { opacity: 1; transform: translateX(0); }
+
+  /* Top-left circle — centered on the left border line */
+  .comp-box::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -9px;      /* (border 3px center = 1.5px) − (radius 8px) ≈ −6.5px from content-box */
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: #5A79AA;
+  }
+
+  /* Top-right circle — centered on the right border line */
+  .comp-box::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: -9px;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: #5A79AA;
+  }
+
+  /* Staircase widths — each box 100px wider than the previous */
+  .sk-b1 { top: 210px; width:  346px; }
+  .sk-b2 { top: 328px; width:  306px; }
+  .sk-b3 { top: 446px; width:  526px; }
+  .sk-b4 { top: 564px; width:  564px; }
+  .sk-b5 { top: 682px; width:  704px; }
+  .sk-b6 { top: 800px; width: 701px; }
+  .sk-b7 { top: 918px; width: 806px; }
+</style>
+
+<div class="skills-wrapper" id="skillsWrapper">
+  <section class="skills-section" id="skillsSection">
+
+    <!-- Folder -->
+    <div class="sk-folder" id="skFolder">
+      <img src="imgMain/Group 419.png" alt="portfolio">
+    </div>
+
+    <!-- Heading -->
+    <div class="sk-heading" id="skHeading">Мои компетенции:</div>
+
+    <!-- Tool icons with skill dots -->
+    <div class="sk-tools" id="skTools">
+
+      <div class="tool-row">
+        <img class="tool-icon" src="imgMain/icons8-figma 1.png" alt="Figma">
+        <div class="skill-dots">
+          <div class="sk-dot"></div><div class="sk-dot"></div><div class="sk-dot"></div><div class="sk-dot"></div><div class="sk-dot"></div>
+        </div>
+      </div>
+
+      <div class="tool-row">
+        <img class="tool-icon" src="imgMain/icons8-середина-пути 1.png" alt="Midjourney">
+        <div class="skill-dots">
+          <div class="sk-dot"></div><div class="sk-dot"></div><div class="sk-dot"></div><div class="sk-dot"></div><div class="sk-dot"></div>
+        </div>
+      </div>
+
+      <div class="tool-row">
+        <img class="tool-icon" src="imgMain/icons8-adobe-photoshop 1.png" alt="Photoshop">
+        <div class="skill-dots">
+          <div class="sk-dot"></div><div class="sk-dot"></div><div class="sk-dot"></div><div class="sk-dot"></div><div class="sk-dot empty"></div>
+        </div>
+      </div>
+
+      <div class="tool-row">
+        <img class="tool-icon" src="imgMain/Adobe_Illustrator_CC_icon 1.png" alt="Illustrator">
+        <div class="skill-dots">
+          <div class="sk-dot"></div><div class="sk-dot"></div><div class="sk-dot"></div><div class="sk-dot empty"></div><div class="sk-dot empty"></div>
+        </div>
+      </div>
+
+      <div class="tool-row">
+        <img class="tool-icon" src="imgMain/vecteezy_capcut-square-icon-logo-symbol_55030400 1.png" alt="CapCut">
+        <div class="skill-dots">
+          <div class="sk-dot"></div><div class="sk-dot"></div><div class="sk-dot"></div><div class="sk-dot"></div><div class="sk-dot"></div>
+        </div>
+      </div>
+
+      <div class="tool-row">
+        <img class="tool-icon" src="imgMain/Canva-logo-PNG-small-size 1.png" alt="Canva">
+        <div class="skill-dots">
+          <div class="sk-dot"></div><div class="sk-dot"></div><div class="sk-dot"></div><div class="sk-dot"></div><div class="sk-dot"></div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Competency staircase boxes -->
+    <div class="comp-box sk-b1">UX-UI дизайн</div>
+    <div class="comp-box sk-b2">AI-креатор</div>
+    <div class="comp-box sk-b3">инфографика / гайды</div>
+    <div class="comp-box sk-b4">оформление соцсетей</div>
+    <div class="comp-box sk-b5">разработка фирменного стиля</div>
+    <div class="comp-box sk-b6">анимационный монтаж видео</div>
+    <div class="comp-box sk-b7">презентации различной сложности</div>
+
+  </section>
+</div>
+
+<script>
+  /* ── Scale section ── */
+  function scaleSkills() {
+    const section = document.getElementById('skillsSection');
+    const wrapper = document.getElementById('skillsWrapper');
+    const scale = window.innerWidth / 1920;
+    section.style.transform = 'scale(' + scale + ')';
+    wrapper.style.height = (1080 * scale) + 'px';
+  }
+  scaleSkills();
+  window.addEventListener('resize', scaleSkills);
+
+  /* ── Scroll animation ── */
+  const skSection = document.getElementById('skillsSection');
+  const skFolder  = document.getElementById('skFolder');
+  const skHeading = document.getElementById('skHeading');
+  const skTools   = document.getElementById('skTools');
+  const compBoxes = document.querySelectorAll('.comp-box');
+  let skAnimated  = false;
+
+  const skObserver = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting && !skAnimated) {
+        skAnimated = true;
+
+        skFolder.classList.add('sk-on');
+        skHeading.classList.add('sk-on');
+        skTools.classList.add('sk-on');
+
+        compBoxes.forEach(function(box, i) {
+          setTimeout(function() { box.classList.add('sk-on'); }, 120 * i);
+        });
+
+        skObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12 });
+
+  skObserver.observe(skSection);
+</script>
+
+
+<!-- ═══════════════════════════════════════════════════ -->
+<!--              SECTION 4 — А в чём твоя              -->
+<!-- ═══════════════════════════════════════════════════ -->
+
+<div style="width:100%; line-height:0;">
+  <img src="imgMain/Frame 1430105602.png" alt="А в чём твоя" style="width:100%; height:auto; display:block;">
+</div>
+
+
+<!-- ═══════════════════════════════════════════════════ -->
+<!--       SECTION 5 — Творческая ДНК / Этапы работы   -->
+<!-- ═══════════════════════════════════════════════════ -->
+
+<style>
+  .process-wrapper {
+    width: 100%;
+    height: auto;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .process-section {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1920px;
+    height: 6200px;
+    transform-origin: top left;
+    overflow: hidden;
+    overflow-y: auto;
+    background: #ffffff;
+  }
+
+  /* ── Background ── */
+  .process-bg {
+    position: absolute;
+    inset: 0;
+    top: 100px;
+    width: 100%;
+    object-fit: cover;
+    object-position: center top;
+  }
+
+  .process-vinyl img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+  }
+
+  .process-question {
+    font-family: 'Evolventa', sans-serif;
+    font-weight: 700;
+    font-size: 130px;
+    line-height: 0.95;
+    color: #1a1a1a;
+    letter-spacing: -2px;
+    padding-left: 40px;
+  }
+
+  /* ── ЭТАПЫ РАБОТЫ title (Vector.svg) ── */
+  .process-title {
+    position: absolute;
+    top: 1550px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 1000px;
+  }
+  .process-title svg {
+    width: 1000px;
+    height: auto;
+    display: block;
+  }
+
+  /* ── Stages container ── */
+  .process-stages {
+    position: absolute;
+    top: 820px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 1200px;
+    height: 2270px; /* = 1200/1287 × 3033 */
+  }
+
+  /* Line.svg overlay — spans full stages container */
+  .process-lines {
+    position: absolute;
+    top: 1600px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 2;
+  }
+
+  /* ── Individual stages ── */
+  .proc-stage {
+    position: absolute;
+    z-index: 1;
+  }
+
+  .proc-stage img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+  }
+
+  .proc-label {
+    font-family: 'Evolventa', sans-serif;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 1.35;
+    color: #1a1a1a;
+    white-space: nowrap;
+  }
+
+  /* Stage 1 — ИССЛЕДОВАНИЕ (left side) */
+  .ps-1 {
+    top: 1150px;
+    left: 0;
+    width: 700px;
+  }
+  .ps-1 .proc-label { 
+    margin-top: 22px;
+  }
+
+  /* Stage 2 — ПОИСК ВИЗУАЛЬНОГО ЯЗЫКА (right side) */
+  .ps-2 {
+    top: 2000px;
+    right: 0;
+    width: 700px;
+  }
+  .ps-2 .proc-label {
+    position: absolute;
+    left: -390px;
+    bottom: 40px;
+    white-space: normal;
+    width: 700px;
+  }
+
+  /* Stage 3 — ПРОТОТИПИРОВАНИЕ (left side) */
+  .ps-3 {
+    top: 2910px;
+    left: 250px;
+    width: 1000px;
+  }
+  .ps-3 .proc-label { 
+    margin-top: -100px; 
+  }
+
+  /* Stage 4 — РЕАЛИЗАЦИЯ (right side) */
+  .ps-4 {
+    top: 3930px;
+    left: 40px;
+    width: 1500px;
+  }
+  .ps-4 .proc-label {
+    margin-top: 22px; 
+    margin-left: 820px;
+  }
+</style>
+
+<div class="process-wrapper" id="processWrapper">
+  <section class="process-section" id="processSection">
+
+    <!-- Background texture -->
+    <img class="process-bg" src="imgMain/Group 691.png" alt="">
+
+    <!-- ЭТАПЫ РАБОТЫ — inline Vector.svg -->
+    <div class="process-title">
+      <svg viewBox="0 0 1377 411" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M1253.59 6.98047H1276.88V162.187H1285.21C1304.42 162.187 1313.43 165.946 1321.08 177.761C1333.32 196.558 1340.63 237.373 1340.63 283.559C1340.63 327.597 1334.17 363.579 1322.78 383.986C1314.45 399.024 1304.76 403.857 1285.55 403.857H1253.59V6.98047ZM1276.88 232.54V333.504H1286.23C1295.41 333.504 1299.66 332.43 1304.08 329.745C1312.24 323.837 1317.17 306.115 1317.17 281.948C1317.17 260.466 1312.24 243.818 1304.25 237.91C1299.66 234.151 1293.2 232.54 1285.04 232.54H1276.88ZM1376.5 6.98047V403.857H1353.21V6.98047H1376.5Z" fill="black"/>
+        <path d="M1185.28 403.857V77.3334H1161.99V6.98047H1231.86V77.3334H1208.57V403.857H1185.28Z" fill="black"/>
+        <path d="M1084.11 0C1119.81 0 1148.54 91.8348 1148.54 205.151C1148.54 321.153 1120.32 410.84 1083.77 410.84C1046.88 410.84 1017.64 320.616 1017.64 205.688C1017.64 89.6866 1046.54 0 1084.11 0ZM1082.58 70.89C1059.63 70.89 1041.1 130.502 1041.1 205.151C1041.1 280.875 1059.8 339.95 1083.6 339.95C1107.4 339.95 1125.08 283.023 1125.08 206.225C1125.08 128.354 1107.06 70.89 1082.58 70.89Z" fill="black"/>
+        <path d="M936.618 226.095V333.504H945.118C953.448 333.504 957.358 331.893 961.438 329.208C968.918 323.3 973.508 303.967 973.508 278.725C973.508 256.17 968.918 237.91 961.608 232.003C957.358 228.243 951.578 226.095 944.098 226.095H936.618ZM936.618 77.3334V155.742H944.438C962.628 155.742 971.128 159.501 978.438 171.853C989.998 191.187 996.968 233.077 996.968 280.337C996.968 325.448 990.848 362.505 980.138 383.449C972.318 399.024 962.968 403.857 944.778 403.857H913.328V6.98047H988.978V77.3334H936.618Z" fill="black"/>
+        <path d="M768.109 403.857L820.469 6.98047H838.829L891.529 403.857H865.859L852.429 301.281H807.719L793.779 403.857H768.109ZM816.219 230.928H843.079L829.649 110.63L816.219 230.928Z" fill="black"/>
+        <path d="M689.297 403.857V6.98047H720.407C737.577 6.98047 746.077 12.3509 753.557 27.3882C763.757 48.333 769.537 84.8521 769.537 129.427C769.537 176.687 762.907 217.502 752.027 236.836C745.227 248.651 737.237 252.947 720.067 252.947H712.587V403.857H689.297ZM712.587 182.594H719.387C726.187 182.594 731.627 180.983 735.367 177.224C741.997 171.316 746.077 153.594 746.077 131.038C746.077 105.797 741.997 87.0003 735.197 81.0928C731.627 78.4075 728.057 77.3334 720.407 77.3334H712.587V182.594Z" fill="black"/>
+        <path d="M477.562 6.98047H500.853V162.187H509.182C528.392 162.187 537.402 165.946 545.052 177.761C557.292 196.558 564.602 237.373 564.602 283.559C564.602 327.597 558.143 363.579 546.753 383.986C538.423 399.024 528.733 403.857 509.523 403.857H477.562V6.98047ZM500.853 232.54V333.504H510.203C519.383 333.504 523.632 332.43 528.052 329.745C536.212 323.837 541.143 306.115 541.143 281.948C541.143 260.466 536.212 243.818 528.222 237.91C523.632 234.151 517.173 232.54 509.013 232.54H500.853ZM600.472 6.98047V403.857H577.182V6.98047H600.472Z" fill="black"/>
+        <path d="M355.844 403.857V6.98047H444.924V403.857H421.634V77.3334H379.134V403.857H355.844Z" fill="black"/>
+        <path d="M210.625 403.857L262.985 6.98047H281.345L334.045 403.857H308.375L294.945 301.281H250.235L236.295 403.857H210.625ZM258.735 230.928H285.595L272.165 110.63L258.735 230.928Z" fill="black"/>
+        <path d="M160.837 403.857V77.3334H137.547V6.98047H207.417V77.3334H184.127V403.857H160.837Z" fill="black"/>
+        <path d="M27.37 293.227C37.74 327.061 46.41 339.95 58.48 339.95C78.03 339.95 94.52 296.986 99.28 238.985H37.4V168.632H99.11C97.41 148.225 94.35 129.428 90.27 114.391C82.62 85.9273 71.91 70.89 58.99 70.89C44.37 70.89 34.51 85.9273 26.01 120.835H0C4.76 87.5384 8.84 69.8159 16.83 48.3341C28.56 17.1855 43.69 0 59.5 0C95.03 0 124.1 91.8348 124.1 204.077C124.1 319.005 94.69 410.84 57.97 410.84C32.13 410.84 9.86 365.728 0 293.227H27.37Z" fill="black"/>
+      </svg>
+    </div>
+
+    <!-- ── Stages container with overlaid arrows ── -->
+    <div class="process-stages">
+
+      <!-- Line.svg — all 3 arrows, inline, spans the full container -->
+      <svg class="process-lines" viewBox="0 0 1287 3033" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
+        <path d="M1005.36 1.47656C1088.85 15.9021 1254.62 199.369 1229.36 413.477M1229.36 413.477L1197.36 357.477M1229.36 413.477L1285.36 357.477M1.35547 1617.48C25.3555 1668.14 112.555 1786.28 269.355 1853.48M269.355 1853.48L249.355 1785.48M269.355 1853.48H193.355M776.355 2725.48C739.648 2768.7 654.53 2845.03 564.557 2864.12M564.557 2864.12C544.501 2868.37 524.204 2869.78 504.149 2867.35C366.613 2850.66 507.014 2689.31 555.725 2792.24C566.344 2814.68 568.268 2839.28 564.557 2864.12ZM564.557 2864.12C554.652 2930.43 504.593 2998.42 472.63 3031.48M472.63 3031.48V2970.28M472.63 3031.48H527.071" stroke="black" stroke-width="3"/>
+      </svg>
+
+      <!-- Stage 1 — ИССЛЕДОВАНИЕ -->
+      <div class="proc-stage ps-1">
+        <img src="imgMain/Group 423.png" alt="Исследование">
+        <div class="proc-label">1. ИССЛЕДОВАНИЕ</div>
+      </div>
+
+      <!-- Stage 2 — ПОИСК ВИЗУАЛЬНОГО ЯЗЫКА -->
+      <div class="proc-stage ps-2">
+        <img src="imgMain/Group 420.png" alt="Поиск визуального языка">
+        <div class="proc-label">2. ПОИСК<br>ВИЗУАЛЬНОГО ЯЗЫКА</div>
+      </div>
+
+      <!-- Stage 3 — ПРОТОТИПИРОВАНИЕ -->
+      <div class="proc-stage ps-3">
+        <img src="imgMain/Frame 1430105612.png" alt="Прототипирование">
+        <div class="proc-label">3. ПРОТОТИПИРОВАНИЕ</div>
+      </div>
+
+      <!-- Stage 4 — РЕАЛИЗАЦИЯ -->
+      <div class="proc-stage ps-4">
+        <img src="imgMain/Group 692.png" alt="Реализация">
+        <div class="proc-label">4. РЕАЛИЗАЦИЯ</div>
+      </div>
+
+    </div>
+  </section>
+</div>
+
+<script>
+  function scaleProcess() {
+    const section = document.getElementById('processSection');
+    const wrapper = document.getElementById('processWrapper');
+    const scale = window.innerWidth / 1920;
+    section.style.transform = 'scale(' + scale + ')';
+    wrapper.style.height = (6200 * scale) + 'px';
+  }
+  scaleProcess();
+  window.addEventListener('resize', scaleProcess);
+</script>
+
+<!-- ═══════════════════════════════════════════════════ -->
+<!--              SECTION 6 — Мои работы                 -->
+<!-- ═══════════════════════════════════════════════════ -->
+
+<style>
+  .work-wrapper { width:100%; position:relative; background:#fff; }
+
+  .work-section {
+    position: relative;
+    width: 1920px;
+    height: 1280px;
+    background: #fff;
+    transform-origin: top left;
+    overflow: hidden;
+  }
+
+  .work-title {
+    position: absolute;
+    top: 10px; left: 64px;
+    font-family: 'ShlapakScript', cursive;
+    font-size: 170px;
+    line-height: 1;
+    color: #1a1a1a;
+    white-space: nowrap;
+    z-index: 10;
+    opacity: 0;
+    animation: aboutTitleIn 1s cubic-bezier(0.22,0.61,0.36,1) 0.2s forwards;
+  }
+
+  .work-bg {
+    position: absolute;
+    inset: 0; top: 280px;
+    z-index: 10;
+    pointer-events: none;
+    width: 100%;
+    object-fit: cover;
+    object-position: center top;
+  }
+
+  /* ── Carousel ── */
+  .car-wrap {
+    position: absolute;
+    top: 345px; left: 0;
+    width: 1920px; height: 290px;
+    overflow: hidden;
+    cursor: grab;
+    z-index: 10;
+    user-select: none;
+  }
+  .car-wrap.grabbing { cursor: grabbing; }
+
+  .car-track {
+    display: flex;
+    gap: 18px;
+    height: 100%;
+    width: max-content;
+    will-change: transform;
+    align-items: center;
+  }
+
+  .car-item {
+    flex-shrink: 0;
+    width: 230px; height: 230px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform .35s ease, box-shadow .35s ease;
+  }
+  .car-item:hover { transform: scale(1.04); }
+  .car-item.is-active {
+    transform: scale(1.09) translateY(-5px);
+    z-index: 2;
+  }
+  .car-item img {
+    width:100%; height:100%;
+    object-fit: cover;
+    display: block;
+    pointer-events: none;
+  }
+
+  /* ── Work info ── */
+  .work-info-box {
+    position: absolute;
+    top: 612px; left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    z-index: 10;
+    pointer-events: none;
+    white-space: nowrap;
+  }
+  .wi-title {
+    font-family: 'Evolventa', sans-serif;
+    font-weight: 400; font-size: 30px;
+    color: #1a1a1a;
+  }
+  .wi-sub {
+    font-family: 'Evolventa', sans-serif;
+    font-size: 22px; color: #888;
+    margin-top: 6px;
+  }
+  .wi-year {
+    font-family: 'Evolventa', sans-serif;
+    font-size: 22px; color: #888;
+    margin-top: 2px;
+  }
+
+  /* ── Modal overlay ── */
+  .modal-overlay {
+    display: none;
+    position: fixed; inset: 0;
+    background: rgba(0,0,0,.72);
+    z-index: 9000;
+  }
+  .modal-overlay.open { display: block; }
+
+  /* ── Modal base ── */
+  .w-modal {
+    display: none;
+    position: fixed;
+    top: 50%; left: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 9100;
+    width: 1100px;
+    max-width: 95vw;
+    max-height: 90vh;
+    background: #fff;
+    overflow-y: auto;
+    box-shadow: 0 28px 90px rgba(0,0,0,.45);
+  }
+  .w-modal.open { display: flex; flex-direction: column; }
+
+  .wm-inner {
+    padding: 52px 56px 56px;
+    display: flex; flex-direction: column;
+    gap: 26px; position: relative;
+  }
+
+  .wm-close {
+    position: absolute; top: 18px; right: 22px;
+    width: 38px; height: 38px;
+    border: none; background: none;
+    font-size: 22px; line-height: 1;
+    cursor: pointer; color: #1a1a1a;
+    display: flex; align-items: center; justify-content: center;
+    opacity: .6; transition: opacity .2s;
+  }
+  .wm-close:hover { opacity: 1; }
+
+  .wm-header { padding-right: 50px; }
+  .wm-htitle {
+    font-family: 'Evolventa', sans-serif;
+    font-weight: 700; font-size: 30px; color: #1a1a1a;
+  }
+  .wm-hmeta {
+    font-family: 'Evolventa', sans-serif;
+    font-size: 17px; color: #999;
+    margin-top: 5px; letter-spacing: .5px;
+  }
+
+  /* ── Image placeholder ── */
+  .wm-ph {
+    background: #eaeaea;
+    position: relative; overflow: hidden;
+    flex-shrink: 0;
+  }
+  .wm-ph::after {
+    content: attr(data-label);
+    position: absolute; top: 50%; left: 50%;
+    transform: translate(-50%,-50%);
+    font-family: 'Evolventa', sans-serif;
+    font-size: 13px; color: #c0c0c0;
+    pointer-events: none;
+  }
+  .wm-ph img {
+    position: absolute; inset: 0;
+    width: 100%; height: 100%;
+    object-fit: cover; display: block;
+  }
+
+  .wm-text {
+    background: #f6f6f6;
+    padding: 24px 28px;
+    font-family: 'Evolventa', sans-serif;
+    font-size: 16px; line-height: 1.75; color: #555;
+  }
+
+  /* ── Modal body layout ── */
+  .wm-body { display:flex; gap:28px; align-items:flex-start; }
+  .wm-main-img { flex:0 0 46%; border-radius:16px; overflow:hidden; background:#f0f0f0; box-shadow:0 4px 24px rgba(0,0,0,.1); }
+  .wm-main-img img { width:100%; height:auto; display:block; }
+  .wm-right { flex:1; display:flex; flex-direction:column; gap:18px; min-width:0; }
+  .wm-desc { font-family:'Evolventa',sans-serif; font-size:16px; line-height:1.75; color:#333; margin:0; }
+  .wm-desc mark { background:#d5d5d5; color:inherit; padding:0 3px; border-radius:2px; }
+  .wm-thumb { border-radius:12px; overflow:hidden; }
+  .wm-thumb img { width:100%; height:auto; display:block; }
+  .wm-thumbs { display:flex; gap:12px; }
+  .wm-thumbs .wm-thumb { flex:1; }
+</style>
+
+<div class="work-wrapper" id="workWrapper">
+  <section class="work-section" id="workSection">
+    <div class="work-title">Мои работы</div>
+
+    <div class="car-wrap" id="carWrap">
+      <div class="car-track" id="carTrack"></div>
+    </div>
+
+    <div class="work-info-box">
+      <div class="wi-title" id="wiTitle">—</div>
+      <div class="wi-sub"   id="wiSub">—</div>
+      <div class="wi-year"  id="wiYear">—</div>
+    </div>
+
+    <img class="work-bg" src="imgMain/WorkSpace.png" alt="">
+  </section>
+</div>
+
+<div id="modalOverlay" class="modal-overlay"></div>
+
+<script>
+  /* ── Scale ── */
+  function scaleWork() {
+    const s = document.getElementById('workSection');
+    const w = document.getElementById('workWrapper');
+    const sc = window.innerWidth / 1920;
+    s.style.transform = 'scale(' + sc + ')';
+    w.style.height = (1280 * sc) + 'px';
+  }
+  scaleWork();
+  window.addEventListener('resize', scaleWork);
+
+  /* ── Works data ── */
+  const WORKS = [
+    {id:1,  imgs:3, title:'Нулевой километр',
+      cat:'UX/UI дизайн', year:'2024',
+      text:'Разработка <mark>мобильного приложения</mark> для туристического проекта «Нулевой километр». Создан полный <mark>UX/UI дизайн</mark>: исследование аудитории, прототипирование, финальные макеты. Акцент на интуитивной навигации и <mark>локальном колорите</mark> региона.'},
+    {id:2,  imgs:2, title:'Масла очистки',
+      cat:'Брендинг', year:'2024',
+      text:'Создание <mark>фирменного стиля</mark> для бренда натуральных масел. Разработана айдентика, включающая <mark>логотип, упаковку и визуальный язык</mark>. Дизайн упаковки отражает натуральность и <mark>органическое происхождение</mark> продукта.'},
+    {id:3,  imgs:3, title:'Voice.MD',
+      cat:'UX/UI дизайн', year:'2023',
+      text:'Проектирование интерфейса <mark>медицинской платформы</mark> для голосовых заметок врачей. Разработана <mark>система навигации</mark> и пользовательских сценариев. Особое внимание уделено <mark>доступности и эргономике</mark> в условиях рабочей нагрузки.'},
+    {id:4,  imgs:2, title:'NFT маркет',
+      cat:'Лендинг + Оформление соцсетей', year:'2023',
+      text:'Разработка <mark>лендинга и визуального контента</mark> для NFT-маркетплейса. Создан <mark>дизайн промо-страницы</mark> и серия шаблонов для соцсетей. Стиль выдержан в <mark>футуристической эстетике Web3</mark>.'},
+    {id:5,  imgs:2, title:'Разработка фирменного стиля',
+      cat:'Фирменный стиль', year:'2023',
+      text:'Полная разработка <mark>корпоративной айдентики</mark>: логотип, фирменные цвета, типографика. Создан <mark>брендбук</mark> с правилами применения стиля на всех носителях. Дизайн сочетает <mark>строгость и современность</mark>.'},
+    {id:6,  imgs:2, title:'Разработка упаковки для магазина',
+      cat:'Фирменный стиль', year:'2023',
+      text:'Дизайн <mark>упаковочной системы</mark> для розничного магазина: пакеты, коробки, этикетки. Единый <mark>визуальный язык</mark> позволяет мгновенно узнавать бренд на полке. Использованы <mark>экологичные решения</mark> в оформлении.'},
+    {id:7,  imgs:3, title:'Сувенирная продукция',
+      cat:'Брендинг', year:'2022',
+      text:'Разработка линейки <mark>сувенирной и мерч-продукции</mark>: кружки, блокноты, значки, футболки. Все изделия выполнены в <mark>едином фирменном стиле</mark> клиента. Адаптация логотипа под <mark>различные техники нанесения</mark>.'},
+    {id:8,  imgs:3, title:'Конверты и офисная продукция',
+      cat:'Фирменный стиль', year:'2022',
+      text:'Комплект <mark>деловой документации и офисной полиграфии</mark>: конверты, бланки, визитки, папки. Дизайн строго следует <mark>корпоративным стандартам</mark> клиента. Все материалы подготовлены к <mark>офсетной и цифровой печати</mark>.'},
+    {id:9,  imgs:2, title:'Многостраничный журнал',
+      cat:'Фирменный стиль', year:'2022',
+      text:'Вёрстка и дизайн <mark>корпоративного журнала</mark> объёмом 48 полос. Разработаны <mark>шаблоны разворотов</mark>, инфографика и иллюстрации. Сочетание <mark>редакционного стиля</mark> с фирменной айдентикой компании.'},
+    {id:10, imgs:1, title:'Разработка поста для VK Музыки',
+      cat:'Инфографика + Соцсети', year:'2022',
+      text:'Серия <mark>визуальных постов</mark> для официального сообщества VK Музыки. Инфографика представляет <mark>топы и статистику прослушиваний</mark>. Дизайн адаптирован под <mark>фирменный стиль платформы</mark>.'},
+    {id:11, imgs:1, title:'Разработка поста для VK Музыки',
+      cat:'Инфографика + Соцсети', year:'2022',
+      text:'Визуальный контент для <mark>рекламной кампании VK Музыки</mark>. Разработаны <mark>анимированные шаблоны</mark> для Stories и постов. Графика отражает <mark>динамику и энергию</mark> музыкального контента.'},
+    {id:12, imgs:2, title:'Интерфейс для игры',
+      cat:'UX/UI дизайн', year:'2021',
+      text:'Создана визуальная концепция игры <mark>в формате старинного книги.</mark> Богатое оформление обложки с винтажными элементами, функциональный разворот с хроникой игроков. Закладки разных цветов для навигации, система ранжирования участников.'},
+    {id:13, imgs:2, title:'Презентации в коллажном стиле',
+      cat:'Презентация', year:'2021',
+      text:'Серия <mark>авторских презентаций</mark> в технике визуального коллажа. Каждый слайд — самостоятельная <mark>художественная композиция</mark>, сохраняющая структуру подачи данных. Смешение <mark>фотографии, типографики и текстур</mark>.'},
+    {id:14, imgs:1, title:'Анализ бренда',
+      cat:'Презентация + анализ', year:'2021',
+      text:'Глубокий <mark>визуальный анализ бренда</mark> конкурентной среды. Подготовлена <mark>исследовательская презентация</mark> с разбором айдентики, коммуникаций и позиционирования. Сформулированы <mark>рекомендации по развитию</mark> визуального стиля.'},
+    {id:15, imgs:3, title:'Приложение AURA',
+      cat:'UX/UI дизайн', year:'2021',
+      text:'Проектирование <mark>мобильного приложения AURA</mark> в сфере велнес и медитации. Разработан полный <mark>пользовательский путь</mark>: онбординг, главный экран, сессии. Дизайн создаёт атмосферу <mark>спокойствия и фокуса</mark>.'},
+    {id:16, imgs:3, title:'Детская книга',
+      cat:'Инфографика', year:'2021',
+      text:'Иллюстрирование и вёрстка <mark>детской познавательной книги</mark>. Создан <mark>авторский стиль иллюстраций</mark>, понятный детям 5–10 лет. Инфографика совмещает <mark>обучение и игровой подход</mark>.'},
+    {id:17, imgs:1, title:'Книга по категоризации воспоминаний',
+      cat:'Инфографика', year:'2020',
+      text:'Авторский арт-проект — <mark>книга-исследование памяти</mark>. Визуальная система для <mark>классификации и хранения воспоминаний</mark>. Сочетание инфографики, <mark>нарратива и концептуального дизайна</mark>.'},
+    {id:18, imgs:2, title:'Рекламные постеры для проекта «Архив воспоминаний»',
+      cat:'AI-креатор', year:'2020',
+      text:'Серия <mark>концептуальных постеров</mark> для арт-проекта «Архив воспоминаний». Генеративные образы созданы с помощью <mark>AI-инструментов</mark> и доработаны вручную. Каждый постер — отдельная <mark>эмоциональная история</mark>.'},
+  ];
+
+  /* ── Carousel ── */
+  const ISIZE = 230, GAP = 18, STEP = 248, SET_W = 18 * 248;
+  let ox = -SET_W, dragging = false, moved = false;
+  let sx = 0, lx = 0, lt = 0, vel = 0, raf = null, aid = -1;
+
+  const track = document.getElementById('carTrack');
+  const wrap  = document.getElementById('carWrap');
+
+  /* Build 3 × 18 items */
+  [0,1,2].forEach(si => {
+    WORKS.forEach(w => {
+      const el = document.createElement('div');
+      el.className = 'car-item';
+      el.dataset.id = w.id;
+      el.innerHTML = '<img src="iconWork/icon'+w.id+'.png" alt="'+w.title+'" draggable="false">';
+      el.addEventListener('click', () => { if (!moved) openModal(w.id); });
+      track.appendChild(el);
+    });
+  });
+
+  function sc() { return window.innerWidth / 1920; }
+
+  function norm() {
+    while (ox > 0)         ox -= SET_W;
+    while (ox < -2*SET_W)  ox += SET_W;
+  }
+
+  function paint() {
+    norm();
+    track.style.transform = 'translateX('+ox+'px)';
+    detectActive();
+  }
+
+  function detectActive() {
+    const pos = -ox + 960;
+    const idx = (((Math.round((pos - ISIZE/2) / STEP)) % 18) + 18) % 18;
+    if (idx === aid) return;
+    aid = idx;
+    const w = WORKS[idx];
+    document.getElementById('wiTitle').textContent = w.title;
+    document.getElementById('wiSub').textContent   = w.cat;
+    document.getElementById('wiYear').textContent  = w.year;
+    document.querySelectorAll('.car-item').forEach(el => {
+      el.classList.toggle('is-active', +el.dataset.id === w.id);
+    });
+  }
+
+  function momentum() {
+    if (Math.abs(vel) < 0.3) return;
+    ox += vel; vel *= 0.93;
+    paint();
+    raf = requestAnimationFrame(momentum);
+  }
+
+  wrap.addEventListener('mousedown', e => {
+    cancelAnimationFrame(raf);
+    dragging = true; moved = false;
+    sx = lx = e.clientX; lt = Date.now(); vel = 0;
+    wrap.classList.add('grabbing');
+  });
+  window.addEventListener('mousemove', e => {
+    if (!dragging) return;
+    if (Math.abs(e.clientX - sx) > 4) moved = true;
+    const dx = (e.clientX - lx) / sc();
+    vel = dx / Math.max(1, Date.now()-lt) * 16;
+    ox += dx; lx = e.clientX; lt = Date.now();
+    paint();
+  });
+  window.addEventListener('mouseup', () => {
+    if (!dragging) return;
+    dragging = false; wrap.classList.remove('grabbing');
+    raf = requestAnimationFrame(momentum);
+  });
+
+  wrap.addEventListener('wheel', e => {
+    e.preventDefault();
+    cancelAnimationFrame(raf); vel = 0;
+    ox -= (e.deltaX || e.deltaY) / sc() * 1.4;
+    paint();
+  }, {passive:false});
+
+  wrap.addEventListener('touchstart', e => {
+    cancelAnimationFrame(raf);
+    moved = false; sx = lx = e.touches[0].clientX; lt = Date.now(); vel = 0;
+  }, {passive:true});
+  wrap.addEventListener('touchmove', e => {
+    e.preventDefault();
+    if (Math.abs(e.touches[0].clientX - sx) > 4) moved = true;
+    const dx = (e.touches[0].clientX - lx) / sc();
+    vel = dx / Math.max(1, Date.now()-lt) * 16;
+    ox += dx; lx = e.touches[0].clientX; lt = Date.now();
+    paint();
+  }, {passive:false});
+  wrap.addEventListener('touchend', () => { raf = requestAnimationFrame(momentum); });
+
+  paint();
+
+  /* ── Modals ── */
+  function buildModal(w) {
+    const base = 'imgWork/' + w.id + '/';
+    let rightImgs = '';
+    if (w.imgs === 2) {
+      rightImgs = '<div class="wm-thumb"><img src="' + base + 'work-2.png" alt=""></div>';
+    } else if (w.imgs >= 3) {
+      rightImgs = '<div class="wm-thumbs">' +
+        '<div class="wm-thumb"><img src="' + base + 'work-2.png" alt=""></div>' +
+        '<div class="wm-thumb"><img src="' + base + 'work-3.png" alt=""></div>' +
+      '</div>';
+    }
+    const desc = w.text ? '<p class="wm-desc">' + w.text + '</p>' : '';
+    return '<div class="wm-body">' +
+      '<div class="wm-main-img"><img src="' + base + 'work-1.png" alt="' + w.title + '"></div>' +
+      '<div class="wm-right">' + desc + rightImgs + '</div>' +
+    '</div>';
+  }
+
+  function openModal(id) {
+    document.getElementById('modal-'+id).classList.add('open');
+    document.getElementById('modalOverlay').classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeModal() {
+    document.querySelectorAll('.w-modal.open').forEach(m => m.classList.remove('open'));
+    document.getElementById('modalOverlay').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  WORKS.forEach(w => {
+    document.body.insertAdjacentHTML('beforeend',
+      '<div class="w-modal" id="modal-'+w.id+'"><div class="wm-inner">' +
+        '<button class="wm-close">✕</button>' +
+        '<div class="wm-header">' +
+          '<div class="wm-htitle">'+w.title+'</div>' +
+          '<div class="wm-hmeta">'+w.cat+' · '+w.year+'</div>' +
+        '</div>' +
+        buildModal(w) +
+      '</div></div>'
+    );
+  });
+
+  document.addEventListener('click', e => { if (e.target.closest('.wm-close')) closeModal(); });
+  document.getElementById('modalOverlay').addEventListener('click', closeModal);
+  document.addEventListener('keydown', e => { if (e.key==='Escape') closeModal(); });
+</script>
+
+<!-- ═══════════════════════════════════════════════════ -->
+<!--            SECTION 7 — Кейс-оформления              -->
+<!-- ═══════════════════════════════════════════════════ -->
+
+<style>
+  .case1-wrapper { width:100%; position:relative; background:#fff; }
+  .case2-wrapper { width:100%; position:relative; background:#fff; }
+  .case3-wrapper { width:100%; position:relative; background:#fff; }
+  .case4-wrapper { width:100%; position:relative; background:#fff; }
+
+  .case1-section {
+    position: relative;
+    width: 1920px;
+    height: 6000px;
+    background: #fff;
+    transform-origin: top left;
+    overflow: hidden;
+  }
+
+  .case-title {
+    position: absolute;
+    top: 100px; left: 64px;
+    font-family: 'ShlapakScript', cursive;
+    font-size: 170px;
+    line-height: 1;
+    color: #1a1a1a;
+    white-space: nowrap;
+    z-index: 10;
+    opacity: 0;
+    animation: aboutTitleIn 1s cubic-bezier(0.22,0.61,0.36,1) 0.2s forwards;
+  }
+
+  .case1-img {
+    position: absolute;
+    inset: 0; top: 280px;
+    top: 400px;
+    z-index: 10;
+    pointer-events: none;
+    width: 100%;
+    object-fit: cover;
+    object-position: center top;
+  }
+
+  .case2-section {
+    position: relative;
+    width: 1920px;
+    height: 6000px;
+    background: #fff;
+    transform-origin: top left;
+    overflow: hidden;
+  }
+
+  .case2-img {
+    position: absolute;
+    inset: 0; top: 280px;
+    top: 400px;
+    z-index: 10;
+    pointer-events: none;
+    width: 100%;
+    object-fit: cover;
+    object-position: center top;
+  }
+
+  .case3-section {
+    position: relative;
+    width: 1920px;
+    height: 6000px;
+    background: #fff;
+    transform-origin: top left;
+    overflow: hidden;
+  }
+
+  .case3-img {
+    position: absolute;
+    inset: 0; top: 280px;
+    top: 400px;
+    z-index: 10;
+    pointer-events: none;
+    width: 100%;
+    object-fit: cover;
+    object-position: center top;
+  }
+
+  .case4-section {
+    position: relative;
+    width: 1920px;
+    height: 3500px;
+    background: #fff;
+    transform-origin: top left;
+    overflow: hidden;
+  }
+
+  .case4-img {
+    position: absolute;
+    inset: 0; top: 280px;
+    top: 400px;
+    z-index: 10;
+    pointer-events: none;
+    width: 100%;
+    object-fit: cover;
+    object-position: center top;
+  }
+</style>
+
+<div class="case1-wrapper" id="caseWrapper">
+  <section class="case1-section" id="caseSection">
+    <div class="case-title">Кейс-оформления</div>
+    <img class="case1-img" src="imgMain/case1.png" alt="">
+  </section>
+</div>
+
+<div class="case2-wrapper" id="case2Wrapper">
+  <section class="case2-section" id="case2Section">
+    <img class="case2-img" src="imgMain/case2.png" alt="">
+  </section>
+</div> 
+
+<div class="case3-wrapper" id="case3Wrapper">
+  <section class="case3-section" id="case3Section">
+    <img class="case3-img" src="imgMain/case3.png" alt="">
+  </section>
+</div>   
+
+<div class="case4-wrapper" id="case4Wrapper">
+  <section class="case4-section" id="case4Section">
+    <img class="case4-img" src="imgMain/case4.png" alt="">
+  </section>
+</div>
+
+<script>
+  /* ── Scale ── */
+  function scaleCase() {
+    const s = document.getElementById('caseSection');
+    const w = document.getElementById('caseWrapper');
+    const sc = window.innerWidth / 1920;
+    s.style.transform = 'scale(' + sc + ')';
+    w.style.height = (2440 * sc) + 'px';
+  }
+  scaleCase();
+  window.addEventListener('resize', scaleCase);
+
+  /* ── Scale ── */
+  function scale2Case() {
+    const s = document.getElementById('case2Section');
+    const w = document.getElementById('case2Wrapper');
+    const sc = window.innerWidth / 1920;
+    s.style.transform = 'scale(' + sc + ')';
+    w.style.height = (2400 * sc) + 'px';
+  }
+  scale2Case();
+  window.addEventListener('resize', scale2Case);
+
+  /* ── Scale ── */
+  function scale3Case() {
+    const s = document.getElementById('case3Section');
+    const w = document.getElementById('case3Wrapper');
+    const sc = window.innerWidth / 1920;
+    s.style.transform = 'scale(' + sc + ')';
+    w.style.height = (2950 * sc) + 'px';
+  }
+  scale3Case();
+  window.addEventListener('resize', scale3Case);
+
+  /* ── Scale ── */
+  function scale4Case() {
+    const s = document.getElementById('case4Section');
+    const w = document.getElementById('case4Wrapper');
+    const sc = window.innerWidth / 1920;
+    s.style.transform = 'scale(' + sc + ')';
+    w.style.height = (3500 * sc) + 'px';
+  }
+  scale4Case();
+  window.addEventListener('resize', scale4Case);
+</script>  
+
+<!-- ═══════════════════════════════════════════════════ -->
+<!--              SECTION 8 — Связь со мной              -->
+<!-- ═══════════════════════════════════════════════════ -->
+
+<style>
+  .footer-wrapper { width:100%; position:relative; background:#fff; }
+
+  .footer-section {
+    position: relative;
+    width: 1920px;
+    height: 2400px;
+    background: #fff;
+    transform-origin: top left;
+    overflow: hidden;
+  }
+
+  .footer-1title {
+    position: absolute;
+    top: 400px; left: 140px;
+    font-family: 'Evolventa', cursive;
+    font-weight: 800;
+    font-size: 110px;
+    line-height: 1;
+    color: #1a1a1a;
+    white-space: nowrap;
+    opacity: 0;
+    animation: aboutTitleIn 1s cubic-bezier(0.22,0.61,0.36,1) 0.2s forwards;
+  }
+
+  .footer-line {
+    position: absolute;
+    inset: 0; top: 166px;
+    left:140px;
+    pointer-events: none;
+    width: 920px;
+    object-fit: cover;
+    object-position: center top;
+  }
+
+  .footer-bird {
+    position: absolute;
+    inset: 0; top: 110px;
+    left:1100px;
+    pointer-events: none;
+    width: 316px;
+    object-fit: cover;
+    object-position: center top;
+    animation: aboutTitleIn 1s cubic-bezier(0.22,0.61,0.36,1) 0.2s forwards;
+  }
+
+  .footer-2title {
+    position: absolute;
+    top: 700px; left: 140px;
+    font-family: 'Evolventa', cursive;
+    font-weight: 800;
+    font-size: 110px;
+    line-height: 1;
+    color: #1a1a1a;
+    white-space: nowrap;
+    opacity: 0;
+    animation: aboutTitleIn 1s cubic-bezier(0.22,0.61,0.36,1) 0.2s forwards;
+  }
+
+  .footer-paper {
+    position: absolute;
+    inset: 0; top: 570px;
+    left: 220px;
+    pointer-events: none;
+    width: 269px;
+    object-fit: cover;
+    object-position: center top;
+    animation: aboutTitleIn 1s cubic-bezier(0.22,0.61,0.36,1) 0.2s forwards;
+  }
+
+  .footer-berry {
+    position: absolute;
+    inset: 0; top: 610px;
+    left: 1447px;
+    pointer-events: none;
+    width: 299px;
+    object-fit: cover;
+    object-position: center top;
+    animation: aboutTitleIn 1s cubic-bezier(0.22,0.61,0.36,1) 0.2s forwards;
+  }
+
+  .footer-3title {
+    position: absolute;
+    top: 1000px; left: 140px;
+    font-family: 'Evolventa', cursive;
+    font-weight: 800;
+    font-size: 110px;
+    line-height: 1;
+    color: #1a1a1a;
+    white-space: nowrap;
+    opacity: 0;
+    animation: aboutTitleIn 1s cubic-bezier(0.22,0.61,0.36,1) 0.2s forwards;
+  }
+
+  .footer-color {
+    position: absolute;
+    inset: 0; top: 850px;
+    left: 870px;
+    pointer-events: none;
+    width: 442px;
+    object-fit: cover;
+    object-position: center top;
+    animation: aboutTitleIn 1s cubic-bezier(0.22,0.61,0.36,1) 0.2s forwards;
+  }
+
+  .footer-eye {
+    position: absolute;
+    inset: 0; top: 935px;
+    left: 1430px;
+    pointer-events: none;
+    width: 268px;
+    object-fit: cover;
+    object-position: center top;
+    animation: aboutTitleIn 1s cubic-bezier(0.22,0.61,0.36,1) 0.2s forwards;
+  }
+
+  .footer-4title {
+    position: absolute;
+    top: 1300px; left: 400px;
+    font-family: 'Evolventa', cursive;
+    font-weight: 800;
+    font-size: 110px;
+    line-height: 1;
+    color: #1a1a1a;
+    white-space: nowrap;
+    opacity: 0;
+    animation: aboutTitleIn 1s cubic-bezier(0.22,0.61,0.36,1) 0.2s forwards;
+  }
+
+  .footer-trungle {
+    position: absolute;
+    inset: 0; top: 1260px;
+    left: 140px;
+    pointer-events: none;
+    width: 215px;
+    object-fit: cover;
+    object-position: center top;
+    animation: aboutTitleIn 1s cubic-bezier(0.22,0.61,0.36,1) 0.2s forwards;
+  }
+
+  .footer-rock {
+    position: absolute;
+    inset: 0; top: 1245px;
+    left: 480px;
+    pointer-events: none;
+    width: 340px;
+    object-fit: cover;
+    object-position: center top;
+    animation: aboutTitleIn 1s cubic-bezier(0.22,0.61,0.36,1) 0.2s forwards;
+  }
+
+  .footer-end {
+    position: absolute;
+    top: 2200px; left: 140px;
+    font-family: 'Evolventa', cursive;
+    font-weight: 700;
+    font-size: 40px;
+    z-index: 11;
+    line-height: 1;
+    color: #ffffff;
+    white-space: nowrap;
+    opacity: 0;
+    animation: aboutTitleIn 1s cubic-bezier(0.22,0.61,0.36,1) 0.2s forwards;
+  }
+
+  .footer-contacts {
+    position: absolute; left: 787px;
+    font-family: 'Evolventa', cursive;
+    font-weight: 400;
+    font-size: 40px;
+    z-index: 11;
+    line-height: 1;
+    color: #ffffff;
+    white-space: nowrap;
+    opacity: 0;
+    animation: aboutTitleIn 1s cubic-bezier(0.22,0.61,0.36,1) 0.2s forwards;
+  }
+
+  /* ── "прямо СЕЙЧАС" link style ── */
+  .contact-link {
+    cursor: pointer;
+    text-decoration: underline;
+    text-decoration-style: solid;
+    text-underline-offset: 6px;
+    text-decoration-thickness: 3px;
+    color: inherit;
+    transition: opacity .2s;
+  }
+  .contact-link:hover { opacity: .7; }
+
+  /* ── Contact form modal ── */
+  .cf-overlay {
+    display: none;
+    position: fixed; inset: 0;
+    background: rgba(0,0,0,.7);
+    z-index: 9500;
+    backdrop-filter: blur(4px);
+  }
+  .cf-overlay.open { display: flex; align-items: center; justify-content: center; }
+
+  .cf-modal {
+    background: #fff;
+    width: 680px;
+    max-width: 96vw;
+    padding: 56px 60px 52px;
+    position: relative;
+    box-shadow: 0 32px 100px rgba(0,0,0,.4);
+  }
+
+  .cf-close {
+    position: absolute; top: 20px; right: 24px;
+    width: 36px; height: 36px;
+    border: none; background: none;
+    font-size: 20px; cursor: pointer;
+    color: #1a1a1a; opacity: .5;
+    transition: opacity .2s;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .cf-close:hover { opacity: 1; }
+
+  .cf-title {
+    font-family: 'Evolventa', sans-serif;
+    font-weight: 700; font-size: 28px;
+    color: #1a1a1a; margin: 0 0 6px;
+  }
+  .cf-sub {
+    font-family: 'Evolventa', sans-serif;
+    font-size: 15px; color: #999;
+    margin: 0 0 36px;
+  }
+
+  .cf-label {
+    display: block;
+    font-family: 'Evolventa', sans-serif;
+    font-size: 13px; color: #888;
+    letter-spacing: .6px; text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+  .cf-field {
+    width: 100%; box-sizing: border-box;
+    border: none; border-bottom: 2px solid #ddd;
+    padding: 10px 0; margin-bottom: 30px;
+    font-family: 'Evolventa', sans-serif;
+    font-size: 17px; color: #1a1a1a;
+    outline: none; background: transparent;
+    transition: border-color .2s;
+  }
+  .cf-field:focus { border-color: #1a1a1a; }
+  .cf-textarea {
+    resize: none; height: 100px;
+    display: block;
+  }
+
+  .cf-submit {
+    width: 100%; padding: 18px;
+    background: #1a1a1a; color: #fff;
+    border: none; cursor: pointer;
+    font-family: 'Evolventa', sans-serif;
+    font-size: 16px; letter-spacing: .5px;
+    transition: background .2s;
+    margin-top: 4px;
+  }
+  .cf-submit:hover { background: #333; }
+  .cf-submit:disabled { background: #aaa; cursor: default; }
+
+  .cf-msg {
+    font-family: 'Evolventa', sans-serif;
+    font-size: 15px; text-align: center;
+    margin-top: 18px; min-height: 22px;
+    color: #2a7a2a;
+  }
+  .cf-msg.error { color: #c0392b; }
+</style>  
+
+<div class="footer-wrapper" id="footerWrapper">
+  <section class="footer-section" id="footerSection">
+    <img class="footer-line" src="imgMain/Vector-line.png">
+    <div class="footer-1title">(ХОЧЕШЬ ТАК ЖЕ, &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;)</div>
+    <img class="footer-bird" src="imgMain/bird.png">
+    <div class="footer-2title">{:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;} (ОСТАВЬ ЗАЯВКУ&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;)</div>
+    <img class="footer-paper" src="imgMain/paper.png">
+    <img class="footer-berry" src="imgMain/berry.png">
+    <div class="footer-3title">(НА ДИЗАЙН *&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;) 
+      {&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</div>
+    <img class="footer-color" src="imgMain/color.png">
+    <img class="footer-eye" src="imgMain/eye.png">
+    <div class="footer-4title">(&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="contact-link" onclick="openContactForm()">прямо СЕЙЧАС</span>:</div>
+    <img class="footer-trungle" src="imgMain/trungle.png">
+    <img class="footer-rock" src="imgMain/rock.png">
+    <img src="imgMain/sea.png" style="position: absolute; top:1420px;">
+    <div class="footer-end">Связаться со мной:</div>
+    <img src="imgMain/telegram.svg" style="position: absolute; top:2190px; left:690px; animation: aboutTitleIn 1s cubic-bezier(0.22,0.61,0.36,1) 0.2s forwards;">
+    <div class="footer-contacts" style="top:2200px;">@Aliya_7315</div>
+    <img src="imgMain/mail.svg" style="position: absolute; top:2285px; left:690px; animation: aboutTitleIn 1s cubic-bezier(0.22,0.61,0.36,1) 0.2s forwards;">
+    <div class="footer-contacts" style="top:2285px;">maulaviyevaa@mail.ru</div>
+  </section>
+</div>
+
+<script>
+  /* ── Scale ── */
+  function scaleFooter() {
+    const s = document.getElementById('footerSection');
+    const w = document.getElementById('footerWrapper');
+    const sc = window.innerWidth / 1920;
+    s.style.transform = 'scale(' + sc + ')';
+    w.style.height = (2400 * sc) + 'px';
+  }
+  scaleFooter();
+  window.addEventListener('resize', scaleFooter);
+</script>
+
+<!-- ── Contact form modal ── -->
+<div class="cf-overlay" id="cfOverlay">
+  <div class="cf-modal">
+    <button class="cf-close" onclick="closeContactForm()">✕</button>
+    <p class="cf-title">Оставить заявку</p>
+    <p class="cf-sub">Напишите мне — отвечу в течение дня</p>
+
+    <form id="cfForm" action="https://api.web3forms.com/submit" method="POST" onsubmit="submitContactForm(event)">
+      <input type="hidden" name="access_key" value="d9ae02b0-a693-4cdb-ab6f-1e561b1e8975">
+      <input type="hidden" name="subject" value="Заявка с портфолио">
+
+      <label class="cf-label" for="cf-name">Имя</label>
+      <input class="cf-field" type="text" id="cf-name" name="name" placeholder="Ваше имя" required>
+
+      <label class="cf-label" for="cf-email">Email</label>
+      <input class="cf-field" type="email" id="cf-email" name="email" placeholder="example@mail.com" required>
+
+      <label class="cf-label" for="cf-msg">Сообщение</label>
+      <textarea class="cf-field cf-textarea" id="cf-msg" name="message" placeholder="Расскажите о проекте..." required></textarea>
+
+      <button class="cf-submit" type="submit" id="cfBtn">Отправить</button>
+    </form>
+    <p class="cf-msg" id="cfResult"></p>
+  </div>
+</div>
+
+<script>
+  function openContactForm() {
+    document.getElementById('cfOverlay').classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeContactForm() {
+    document.getElementById('cfOverlay').classList.remove('open');
+    document.body.style.overflow = '';
+    document.getElementById('cfResult').textContent = '';
+    document.getElementById('cfResult').className = 'cf-msg';
+    document.getElementById('cfForm').reset();
+    document.getElementById('cfBtn').disabled = false;
+  }
+  document.getElementById('cfOverlay').addEventListener('click', function(e) {
+    if (e.target === this) closeContactForm();
+  });
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') closeContactForm();
+  });
+
+  function submitContactForm(e) {
+    e.preventDefault();
+    const btn = document.getElementById('cfBtn');
+    const res = document.getElementById('cfResult');
+    btn.disabled = true;
+    btn.textContent = 'Отправляю...';
+
+    const data = new FormData(document.getElementById('cfForm'));
+
+    fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      body: data,
+      headers: { 'Accept': 'application/json' }
+    })
+      .then(r => r.json())
+      .then(json => {
+        if (json.success) {
+          res.className = 'cf-msg';
+          res.textContent = '✓ Сообщение отправлено! Свяжусь с вами в ближайшее время.';
+          document.getElementById('cfForm').reset();
+          btn.textContent = 'Отправлено';
+        } else {
+          throw new Error();
+        }
+      })
+      .catch(() => {
+        res.className = 'cf-msg error';
+        res.textContent = 'Ошибка при отправке. Попробуйте ещё раз или напишите напрямую на почту.';
+        btn.disabled = false;
+        btn.textContent = 'Отправить';
+      });
+  }
+</script>
+
+</body>
+</html>
