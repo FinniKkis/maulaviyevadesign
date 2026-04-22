@@ -563,7 +563,7 @@
   .skills-section {
     position: relative;
     width: 1920px;
-    height: 1120px;
+    height: 1000px;
     background: #fff;
     transform-origin: top left;
     overflow: hidden;
@@ -574,7 +574,7 @@
     position: absolute;
     top: 30px;
     left: 200px;
-    width: 420px;
+    width: 500px;
     opacity: 0;
     transform: translateX(-40px);
     transition: opacity 0.7s ease, transform 0.7s ease;
@@ -589,7 +589,7 @@
   /* ── "Мои компетенции:" label ── */
   .sk-heading {
     position: absolute;
-    top: 410px;
+    top: 508px;
     left: 240px;
     font-family: 'Evolventa', sans-serif;
     font-weight: 400;
@@ -603,18 +603,31 @@
   .sk-heading.sk-on { opacity: 1; transform: translateX(0); }
 
   /* ── Tool list ── */
-  .sk-tools {
+  .sk-tools1 {
     position: absolute;
-    top: 520px;
-    left: 240px;
+    top: 608px;
+    left: 224px;
     display: flex;
     flex-direction: column;
-    gap: 30px;
+    gap: 60px;
     opacity: 0;
     transform: translateX(-40px);
     transition: opacity 0.7s ease 0.45s, transform 0.7s ease 0.45s;
   }
-  .sk-tools.sk-on { opacity: 1; transform: translateX(0); }
+  .sk-tools1.sk-on { opacity: 1; transform: translateX(0); }
+
+  .sk-tools2 {
+    position: absolute;
+    top: 608px;
+    left: 524px;
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+    opacity: 0;
+    transform: translateX(-40px);
+    transition: opacity 0.7s ease 0.45s, transform 0.7s ease 0.45s;
+  }
+  .sk-tools2.sk-on { opacity: 1; transform: translateX(0); }
 
   .tool-row {
     display: flex;
@@ -677,7 +690,7 @@
 
     font-family: 'Evolventa', sans-serif;
     font-weight: 400;
-    font-size: 40px;
+    font-size: 30px;
     color: #1a1a1a;
     white-space: nowrap;
 
@@ -714,13 +727,13 @@
   }
 
   /* Staircase widths — each box 100px wider than the previous */
-  .sk-b1 { top: 210px; width:  346px; }
-  .sk-b2 { top: 328px; width:  306px; }
-  .sk-b3 { top: 446px; width:  526px; }
-  .sk-b4 { top: 564px; width:  564px; }
-  .sk-b5 { top: 682px; width:  704px; }
-  .sk-b6 { top: 800px; width: 701px; }
-  .sk-b7 { top: 918px; width: 806px; }
+  .sk-b1 { top: 110px; width:  276px; }
+  .sk-b2 { top: 228px; width:  236px; }
+  .sk-b3 { top: 346px; width:  416px; }
+  .sk-b4 { top: 464px; width:  454px; }
+  .sk-b5 { top: 582px; width:  554px; }
+  .sk-b6 { top: 700px; width: 551px; }
+  .sk-b7 { top: 818px; width: 626px; }
 </style>
 
 <div class="skills-wrapper" id="skillsWrapper">
@@ -735,7 +748,7 @@
     <div class="sk-heading" id="skHeading">Мои компетенции:</div>
 
     <!-- Tool icons with skill dots -->
-    <div class="sk-tools" id="skTools">
+    <div class="sk-tools1" id="skTools1">
 
       <div class="tool-row">
         <img class="tool-icon" src="imgMain/icons8-figma 1.png" alt="Figma">
@@ -757,6 +770,10 @@
           <div class="sk-dot"></div><div class="sk-dot"></div><div class="sk-dot"></div><div class="sk-dot"></div><div class="sk-dot empty"></div>
         </div>
       </div>
+
+    </div>  
+
+    <div class="sk-tools2" id="skTools2">
 
       <div class="tool-row">
         <img class="tool-icon" src="imgMain/Adobe_Illustrator_CC_icon 1.png" alt="Illustrator">
@@ -800,7 +817,7 @@
     const wrapper = document.getElementById('skillsWrapper');
     const scale = window.innerWidth / 1920;
     section.style.transform = 'scale(' + scale + ')';
-    wrapper.style.height = (1080 * scale) + 'px';
+    wrapper.style.height = (1000 * scale) + 'px';
   }
   scaleSkills();
   window.addEventListener('resize', scaleSkills);
@@ -809,7 +826,8 @@
   const skSection = document.getElementById('skillsSection');
   const skFolder  = document.getElementById('skFolder');
   const skHeading = document.getElementById('skHeading');
-  const skTools   = document.getElementById('skTools');
+  const skTools1  = document.getElementById('skTools1');
+  const skTools2  = document.getElementById('skTools2');
   const compBoxes = document.querySelectorAll('.comp-box');
   let skAnimated  = false;
 
@@ -820,7 +838,8 @@
 
         skFolder.classList.add('sk-on');
         skHeading.classList.add('sk-on');
-        skTools.classList.add('sk-on');
+        skTools1.classList.add('sk-on');
+        skTools2.classList.add('sk-on');
 
         compBoxes.forEach(function(box, i) {
           setTimeout(function() { box.classList.add('sk-on'); }, 120 * i);
@@ -833,7 +852,6 @@
 
   skObserver.observe(skSection);
 </script>
-
 
 <!-- ═══════════════════════════════════════════════════ -->
 <!--              SECTION 4 — А в чём твоя              -->
