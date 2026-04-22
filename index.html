@@ -1281,6 +1281,50 @@
   .wm-thumb img { width:100%; height:auto; display:block; }
   .wm-thumbs { display:flex; gap:12px; }
   .wm-thumbs .wm-thumb { flex:1; }
+
+  @keyframes wm-slide-up {
+    from { transform: translateY(100%); }
+    to   { transform: translateY(0); }
+  }
+
+  @media (max-width: 768px) {
+    .w-modal {
+      width: 100%;
+      max-width: 100vw;
+      max-height: 92vh;
+      top: auto;
+      left: 0;
+      bottom: 0;
+      transform: none;
+      border-radius: 18px 18px 0 0;
+    }
+    .w-modal.open {
+      animation: wm-slide-up 0.38s cubic-bezier(0.32, 0.72, 0, 1) both;
+    }
+    .wm-inner {
+      padding: 24px 18px 32px;
+      gap: 16px;
+    }
+    .wm-close {
+      top: 12px;
+      right: 14px;
+    }
+    .wm-header { padding-right: 40px; }
+    .wm-htitle { font-size: 20px; }
+    .wm-hmeta  { font-size: 14px; }
+    .wm-body {
+      flex-direction: column;
+      gap: 14px;
+    }
+    .wm-main-img {
+      flex: none;
+      width: 100%;
+      border-radius: 10px;
+    }
+    .wm-right { gap: 12px; }
+    .wm-desc  { font-size: 14px; line-height: 1.65; }
+    .wm-thumbs { gap: 8px; }
+  }
 </style>
 
 <div class="work-wrapper" id="workWrapper">
