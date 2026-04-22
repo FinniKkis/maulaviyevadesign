@@ -879,7 +879,7 @@
     top: 0;
     left: 0;
     width: 1920px;
-    height: 6200px;
+    height: 5566px;
     transform-origin: top left;
     overflow: hidden;
     overflow-y: auto;
@@ -916,9 +916,8 @@
   /* ── ЭТАПЫ РАБОТЫ title (Vector.svg) ── */
   .process-title {
     position: absolute;
-    top: 1550px;
-    left: 50%;
-    transform: translateX(-50%);
+    top: 1150px;
+    left: 176px;
     width: 1000px;
   }
   .process-title svg {
@@ -930,9 +929,8 @@
   /* ── Stages container ── */
   .process-stages {
     position: absolute;
-    top: 820px;
-    left: 50%;
-    transform: translateX(-50%);
+    top: 420px;
+    left: 176px;
     width: 1200px;
     height: 2270px; /* = 1200/1287 × 3033 */
   }
@@ -940,10 +938,10 @@
   /* Line.svg overlay — spans full stages container */
   .process-lines {
     position: absolute;
-    top: 1600px;
-    left: 0;
+    top: 1450px;
+    left: 350px;
     width: 100%;
-    height: 100%;
+    height: auto;
     pointer-events: none;
     z-index: 2;
   }
@@ -973,7 +971,7 @@
   .ps-1 {
     top: 1150px;
     left: 0;
-    width: 700px;
+    width: 653px;
   }
   .ps-1 .proc-label { 
     margin-top: 22px;
@@ -981,13 +979,14 @@
 
   /* Stage 2 — ПОИСК ВИЗУАЛЬНОГО ЯЗЫКА (right side) */
   .ps-2 {
-    top: 2000px;
-    right: 0;
-    width: 700px;
+    top: 1740px;
+    left: 690px;
+    width: 742px;
   }
   .ps-2 .proc-label {
     position: absolute;
-    left: -390px;
+    left: -490px;
+    top: 550px;
     bottom: 40px;
     white-space: normal;
     width: 700px;
@@ -995,7 +994,7 @@
 
   /* Stage 3 — ПРОТОТИПИРОВАНИЕ (left side) */
   .ps-3 {
-    top: 2910px;
+    top: 2770px;
     left: 250px;
     width: 1000px;
   }
@@ -1005,13 +1004,13 @@
 
   /* Stage 4 — РЕАЛИЗАЦИЯ (right side) */
   .ps-4 {
-    top: 3930px;
-    left: 40px;
+    top: 3850px;
+    left: 220px;
     width: 1500px;
   }
   .ps-4 .proc-label {
     margin-top: 22px; 
-    margin-left: 820px;
+    margin-left: 400px;
   }
 </style>
 
@@ -1043,7 +1042,7 @@
 
       <!-- Line.svg — all 3 arrows, inline, spans the full container -->
       <svg class="process-lines" viewBox="0 0 1287 3033" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
-        <path d="M1005.36 1.47656C1088.85 15.9021 1254.62 199.369 1229.36 413.477M1229.36 413.477L1197.36 357.477M1229.36 413.477L1285.36 357.477M1.35547 1617.48C25.3555 1668.14 112.555 1786.28 269.355 1853.48M269.355 1853.48L249.355 1785.48M269.355 1853.48H193.355M776.355 2725.48C739.648 2768.7 654.53 2845.03 564.557 2864.12M564.557 2864.12C544.501 2868.37 524.204 2869.78 504.149 2867.35C366.613 2850.66 507.014 2689.31 555.725 2792.24C566.344 2814.68 568.268 2839.28 564.557 2864.12ZM564.557 2864.12C554.652 2930.43 504.593 2998.42 472.63 3031.48M472.63 3031.48V2970.28M472.63 3031.48H527.071" stroke="black" stroke-width="3"/>
+        <path d="M340.464 3.16774C463.513 -12.571 737.069 83.6424 741.115 268.264M741.115 268.264L684.419 232.745M741.115 268.264L811.236 203.64M247.081 1049.88C252.756 1109.63 239.89 1262.58 143.028 1396.3M143.028 1396.3L125.212 1321.42M143.028 1396.3L206.512 1363.18M1.14355 2203.46C37.8513 2246.68 122.969 2323.01 212.942 2342.1M212.942 2342.1C232.998 2346.35 253.295 2347.76 273.35 2345.33C410.886 2328.64 270.485 2167.29 221.774 2270.22C211.155 2292.66 209.232 2317.26 212.942 2342.1ZM212.942 2342.1C222.847 2408.4 272.906 2476.4 304.869 2509.46M304.869 2509.46V2448.26M304.869 2509.46H250.428" stroke="black" stroke-width="3"/>
       </svg>
 
       <!-- Stage 1 — ИССЛЕДОВАНИЕ -->
@@ -1080,7 +1079,7 @@
     const wrapper = document.getElementById('processWrapper');
     const scale = window.innerWidth / 1920;
     section.style.transform = 'scale(' + scale + ')';
-    wrapper.style.height = (6200 * scale) + 'px';
+    wrapper.style.height = (5566 * scale) + 'px';
   }
   scaleProcess();
   window.addEventListener('resize', scaleProcess);
