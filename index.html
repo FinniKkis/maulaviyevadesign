@@ -1536,19 +1536,23 @@
   /* ── Modals ── */
   function buildModal(w) {
     const base = 'imgWork/' + w.id + '/';
-    let rightImgs = '';
-    if (w.imgs === 2) {
-      rightImgs = '<div class="wm-thumb"><img src="' + base + 'work-2.png" alt=""></div>';
-    } else if (w.imgs >= 3) {
-      rightImgs = '<div class="wm-thumbs">' +
-        '<div class="wm-thumb"><img src="' + base + 'work-2.png" alt=""></div>' +
-        '<div class="wm-thumb"><img src="' + base + 'work-3.png" alt=""></div>' +
-      '</div>';
+    let thumbsHtml = '';
+    if (w.imgs > 1) {
+      thumbsHtml = '<div class="wm-gallery-thumbs">';
+      for (let i = 1; i <= w.imgs; i++) {
+        thumbsHtml += '<div class="wm-gallery-thumb' + (i === 1 ? ' active' : '') + '" data-src="' + base + 'work-' + i + '.png">' +
+          '<img src="' + base + 'work-' + i + '.png" alt="">' +
+        '</div>';
+      }
+      thumbsHtml += '</div>';
     }
     const desc = w.text ? '<p class="wm-desc">' + w.text + '</p>' : '';
     return '<div class="wm-body">' +
-      '<div class="wm-main-img"><img src="' + base + 'work-1.png" alt="' + w.title + '"></div>' +
-      '<div class="wm-right">' + desc + rightImgs + '</div>' +
+      '<div class="wm-left">' +
+        '<div class="wm-main-img"><img src="' + base + 'work-1.png" alt="' + w.title + '" class="wm-main-img-el"></div>' +
+        thumbsHtml +
+      '</div>' +
+      '<div class="wm-right">' + desc + '</div>' +
     '</div>';
   }
 
@@ -1576,7 +1580,16 @@
     );
   });
 
-  document.addEventListener('click', e => { if (e.target.closest('.wm-close')) closeModal(); });
+  document.addEventListener('click', e => {
+    if (e.target.closest('.wm-close')) { closeModal(); return; }
+    const thumb = e.target.closest('.wm-gallery-thumb');
+    if (thumb) {
+      const modal = thumb.closest('.w-modal');
+      modal.querySelector('.wm-main-img-el').src = thumb.dataset.src;
+      modal.querySelectorAll('.wm-gallery-thumb').forEach(t => t.classList.remove('active'));
+      thumb.classList.add('active');
+    }
+  });
   document.getElementById('modalOverlay').addEventListener('click', closeModal);
   document.addEventListener('keydown', e => { if (e.key==='Escape') closeModal(); });
 </script>
