@@ -1997,16 +1997,18 @@
     btn.disabled = true;
     btn.textContent = 'Отправляю...';
 
-    const data = new FormData(document.getElementById('cfForm'));
+    const name    = document.getElementById('cf-name').value.trim();
+    const email   = document.getElementById('cf-email').value.trim();
+    const message = document.getElementById('cf-msg').value.trim();
 
-    fetch('https://api.web3forms.com/submit', {
+    fetch('https://hidden-breeze-7846.max-fortunatov.workers.dev', {
       method: 'POST',
-      body: data,
-      headers: { 'Accept': 'application/json' }
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ name, email, message })
     })
       .then(r => r.json())
       .then(json => {
-        if (json.success) {
+        if (json.ok) {
           res.className = 'cf-msg';
           res.textContent = '✓ Сообщение отправлено! Свяжусь с вами в ближайшее время.';
           document.getElementById('cfForm').reset();
