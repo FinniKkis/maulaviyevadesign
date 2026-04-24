@@ -1587,14 +1587,11 @@
 
 <style>
   .case1-wrapper { width:100%; position:relative; background:#fff; }
-  .case2-wrapper { width:100%; position:relative; background:#fff; }
-  .case3-wrapper { width:100%; position:relative; background:#fff; }
-  .case4-wrapper { width:100%; position:relative; background:#fff; }
 
   .case1-section {
     position: relative;
     width: 1920px;
-    height: 6000px;
+    height: 6315px;
     background: #fff;
     transform-origin: top left;
     overflow: hidden;
@@ -1615,145 +1612,45 @@
 
   .case1-img {
     position: absolute;
-    inset: 0; top: 280px;
+    inset: 0;
     top: 400px;
     z-index: 10;
     pointer-events: none;
-    width: 100%;
-    object-fit: cover;
-    object-position: center top;
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    background-position: top left;
   }
 
-  .case2-section {
-    position: relative;
-    width: 1920px;
-    height: 6000px;
-    background: #fff;
-    transform-origin: top left;
-    overflow: hidden;
-  }
-
-  .case2-img {
-    position: absolute;
-    inset: 0; top: 280px;
-    top: 400px;
-    z-index: 10;
-    pointer-events: none;
-    width: 100%;
-    object-fit: cover;
-    object-position: center top;
-  }
-
-  .case3-section {
-    position: relative;
-    width: 1920px;
-    height: 6000px;
-    background: #fff;
-    transform-origin: top left;
-    overflow: hidden;
-  }
-
-  .case3-img {
-    position: absolute;
-    inset: 0; top: 280px;
-    top: 400px;
-    z-index: 10;
-    pointer-events: none;
-    width: 100%;
-    object-fit: cover;
-    object-position: center top;
-  }
-
-  .case4-section {
-    position: relative;
-    width: 1920px;
-    height: 3500px;
-    background: #fff;
-    transform-origin: top left;
-    overflow: hidden;
-  }
-
-  .case4-img {
-    position: absolute;
-    inset: 0; top: 280px;
-    top: 400px;
-    z-index: 10;
-    pointer-events: none;
-    width: 100%;
-    object-fit: cover;
-    object-position: center top;
-  }
 </style>
 
 <div class="case1-wrapper" id="caseWrapper">
   <section class="case1-section" id="caseSection">
     <div class="case-title">Кейс-оформления</div>
-    <img class="case1-img" src="imgMain/case1.png" alt="">
-  </section>
-</div>
-
-<div class="case2-wrapper" id="case2Wrapper">
-  <section class="case2-section" id="case2Section">
-    <img class="case2-img" src="imgMain/case2.png" alt="">
-  </section>
-</div> 
-
-<div class="case3-wrapper" id="case3Wrapper">
-  <section class="case3-section" id="case3Section">
-    <img class="case3-img" src="imgMain/case3.png" alt="">
-  </section>
-</div>   
-
-<div class="case4-wrapper" id="case4Wrapper">
-  <section class="case4-section" id="case4Section">
-    <img class="case4-img" src="imgMain/case4.png" alt="">
+    <div class="case1-img" id="imgCase"></div>
   </section>
 </div>
 
 <script>
   /* ── Scale ── */
   function scaleCase() {
-    const s = document.getElementById('caseSection');
-    const w = document.getElementById('caseWrapper');
+    const s  = document.getElementById('caseSection');
+    const w  = document.getElementById('caseWrapper');
+    const i  = document.getElementById('imgCase')
     const sc = window.innerWidth / 1920;
     s.style.transform = 'scale(' + sc + ')';
-    w.style.height = (2440 * sc) + 'px';
+    if (window.innerWidth <= 768) {
+      i.style.backgroundImage = "url('imgMain/case1mobile.png')";
+      s.style.height = '8760px';
+      w.style.height = (8760 * sc) + 'px';
+    } else {
+      i.style.backgroundImage = "url('imgMain/case1.png')";
+      s.style.height = '6315px';
+      w.style.height = (6315 * sc) + 'px';
+    }
+    
   }
   scaleCase();
   window.addEventListener('resize', scaleCase);
-
-  /* ── Scale ── */
-  function scale2Case() {
-    const s = document.getElementById('case2Section');
-    const w = document.getElementById('case2Wrapper');
-    const sc = window.innerWidth / 1920;
-    s.style.transform = 'scale(' + sc + ')';
-    w.style.height = (2400 * sc) + 'px';
-  }
-  scale2Case();
-  window.addEventListener('resize', scale2Case);
-
-  /* ── Scale ── */
-  function scale3Case() {
-    const s = document.getElementById('case3Section');
-    const w = document.getElementById('case3Wrapper');
-    const sc = window.innerWidth / 1920;
-    s.style.transform = 'scale(' + sc + ')';
-    w.style.height = (2950 * sc) + 'px';
-  }
-  scale3Case();
-  window.addEventListener('resize', scale3Case);
-
-  /* ── Scale ── */
-  function scale4Case() {
-    const s = document.getElementById('case4Section');
-    const w = document.getElementById('case4Wrapper');
-    const sc = window.innerWidth / 1920;
-    s.style.transform = 'scale(' + sc + ')';
-    w.style.height = (3500 * sc) + 'px';
-  }
-  scale4Case();
-  window.addEventListener('resize', scale4Case);
 </script>  
 
 <!-- ═══════════════════════════════════════════════════ -->
