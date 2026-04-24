@@ -1147,7 +1147,7 @@
 
   .car-item {
     flex-shrink: 0;
-    width: 230px; height: 230px;
+    width: 280px; height: 280px;
     overflow: hidden;
     cursor: pointer;
     transition: transform .35s ease, box-shadow .35s ease;
@@ -1272,12 +1272,12 @@
 
   /* ── Modal body layout ── */
   .wm-body { display:flex; gap:28px; align-items:flex-start; }
-  .wm-main-img { flex:0 0 46%; border-radius:16px; overflow:hidden; background:#f0f0f0; box-shadow:0 4px 24px rgba(0,0,0,.1); }
+  .wm-main-img { flex:0 0 46%; overflow:hidden; background:#f0f0f0; box-shadow:0 4px 24px rgba(0,0,0,.1); }
   .wm-main-img img { width:100%; height:auto; display:block; }
   .wm-right { flex:1; display:flex; flex-direction:column; gap:18px; min-width:0; }
   .wm-desc { font-family:'Evolventa',sans-serif; font-size:16px; line-height:1.75; color:#333; margin:0; }
-  .wm-desc mark { background:#d5d5d5; color:inherit; padding:0 3px; border-radius:2px; }
-  .wm-thumb { border-radius:12px; overflow:hidden; }
+  .wm-desc mark { background:none; color:inherit; padding:0; }
+  .wm-thumb { overflow:hidden; }
   .wm-thumb img { width:100%; height:auto; display:block; }
   .wm-thumbs { display:flex; gap:12px; }
   .wm-thumbs .wm-thumb { flex:1; }
@@ -1296,7 +1296,6 @@
       left: 0;
       bottom: 0;
       transform: none;
-      border-radius: 18px 18px 0 0;
     }
     .w-modal.open {
       animation: wm-slide-up 0.38s cubic-bezier(0.32, 0.72, 0, 1) both;
@@ -1319,7 +1318,6 @@
     .wm-main-img {
       flex: none;
       width: 100%;
-      border-radius: 10px;
     }
     .wm-right { gap: 12px; }
     .wm-desc  { font-size: 14px; line-height: 1.65; }
@@ -1338,7 +1336,6 @@
     <div class="work-info-box">
       <div class="wi-title" id="wiTitle">—</div>
       <div class="wi-sub"   id="wiSub">—</div>
-      <div class="wi-year"  id="wiYear">—</div>
     </div>
 
     <img class="work-bg" src="imgMain/WorkSpace.png" alt="">
@@ -1357,7 +1354,7 @@
     w.style.height = (1280 * sc) + 'px';
   }
   scaleWork();
-  window.addEventListener('resize', scaleWork);
+  window.addEventListener('resize', () => { scaleWork(); applyCarSizes(); paint(); });
 
   /* ── Works data ── */
   const WORKS = [
@@ -1418,8 +1415,8 @@
   ];
 
   /* ── Carousel ── */
-  const ISIZE = 230, GAP = 18, STEP = 248, SET_W = 18 * 248;
-  let ox = -SET_W, dragging = false, moved = false;
+  let ISIZE, GAP, STEP, SET_W, TOP;
+  let ox, dragging = false, moved = false;
   let sx = 0, lx = 0, lt = 0, vel = 0, raf = null, aid = -1;
 
   const track = document.getElementById('carTrack');
@@ -1436,6 +1433,29 @@
       track.appendChild(el);
     });
   });
+
+  function applyCarSizes() {
+    const isMobile = window.innerWidth <= 768;
+    const oldSTEP = STEP;
+    ISIZE = isMobile ? 380 : 280;
+    GAP   = isMobile ? 28  : 18;
+    TOP   = isMobile ? 280 : 280;
+    STEP  = ISIZE + GAP;
+    SET_W = 18 * STEP;
+    document.querySelectorAll('.car-item').forEach(el => {
+      el.style.width  = ISIZE + 'px';
+      el.style.height = ISIZE + 'px';
+    });
+    track.style.gap   = GAP + 'px';
+    wrap.style.height = (ISIZE + 60) + 'px';
+    wrap.style.top    = TOP + 'px';
+    document.querySelector('.work-info-box').style.top =
+      isMobile ? (280 + ISIZE + 60) + 'px' : '';
+    if (oldSTEP && oldSTEP !== STEP) ox = ox * STEP / oldSTEP;
+  }
+
+  applyCarSizes();
+  ox = -SET_W;
 
   function sc() { return window.innerWidth / 1920; }
 
@@ -1458,7 +1478,6 @@
     const w = WORKS[idx];
     document.getElementById('wiTitle').textContent = w.title;
     document.getElementById('wiSub').textContent   = w.cat;
-    document.getElementById('wiYear').textContent  = w.year;
     document.querySelectorAll('.car-item').forEach(el => {
       el.classList.toggle('is-active', +el.dataset.id === w.id);
     });
@@ -1550,7 +1569,7 @@
         '<button class="wm-close">✕</button>' +
         '<div class="wm-header">' +
           '<div class="wm-htitle">'+w.title+'</div>' +
-          '<div class="wm-hmeta">'+w.cat+' · '+w.year+'</div>' +
+          '<div class="wm-hmeta">'+w.cat+'</div>' +
         '</div>' +
         buildModal(w) +
       '</div></div>'
