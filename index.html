@@ -1993,8 +1993,8 @@
       <label class="cf-label" for="cf-name">Имя</label>
       <input class="cf-field" type="text" id="cf-name" name="name" placeholder="Ваше имя" required>
 
-      <label class="cf-label" for="cf-email">Email</label>
-      <input class="cf-field" type="email" id="cf-email" name="email" placeholder="example@mail.com" required>
+      <label class="cf-label" for="cf-email">Telegram</label>
+      <input class="cf-field" type="email" id="cf-email" name="email" placeholder="@name_tg" required>
 
       <label class="cf-label" for="cf-msg">Сообщение</label>
       <textarea class="cf-field cf-textarea" id="cf-msg" name="message" placeholder="Расскажите о проекте..." required></textarea>
@@ -2054,7 +2054,7 @@
       })
       .catch(() => {
         res.className = 'cf-msg error';
-        res.textContent = 'Ошибка при отправке. Попробуйте ещё раз или напишите напрямую на почту.';
+        res.textContent = 'Ошибка при отправке. Попробуйте ещё раз или напишите напрямую в telegram.';
         btn.disabled = false;
         btn.textContent = 'Отправить';
       });
