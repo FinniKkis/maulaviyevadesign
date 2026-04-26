@@ -1275,11 +1275,25 @@
   .wm-left { flex:0 0 46%; display:flex; flex-direction:column; gap:10px; min-width:0; }
   .wm-main-img { overflow:hidden; background:#f0f0f0; box-shadow:0 4px 24px rgba(0,0,0,.1); aspect-ratio:4/4; }
   .wm-main-img img { width:100%; height:100%; object-fit:cover; display:block; transition:opacity 0.18s; }
-  .wm-gallery-thumbs { display:flex; gap:6px; }
-  .wm-gallery-thumb { flex:1; height:46px; cursor:pointer; overflow:hidden; border:2px solid transparent; box-sizing:border-box; opacity:0.5; transition:opacity 0.18s, border-color 0.18s; }
+  .wm-gallery-thumbs { margin: auto; display:flex; gap:6px; }
+  .wm-gallery-thumb { flex:0 0 46px; width:46px; height:46px; cursor:pointer; overflow:hidden; border:2px solid transparent; box-sizing:border-box; opacity:0.5; transition:opacity 0.18s, border-color 0.18s; }
   .wm-gallery-thumb:hover { opacity:0.8; }
-  .wm-gallery-thumb.active { opacity:1; border-color:#1a1a1a; }
+  .wm-gallery-thumb.active { opacity:1; border-color:#bababa; }
   .wm-gallery-thumb img { width:100%; height:100%; object-fit:cover; display:block; }
+
+  /* ── Gallery nav arrows ── */
+  .wm-main-img { position:relative; }
+  .wm-arrow {
+    position:absolute; top:50%; transform:translateY(-50%);
+    width:40px; height:40px;
+    background:none; border:none; padding:0; cursor:pointer;
+    z-index:10; transition:opacity 0.18s;
+    filter: drop-shadow(0 2px 6px rgba(0,0,0,0.55)) drop-shadow(0 0px 2px rgba(0,0,0,0.4));
+  }
+  .wm-arrow img { width:100%; height:100%; display:block; }
+  .wm-arrow.prev { left:12px; }
+  .wm-arrow.next { right:12px; }
+  .wm-arrow.disabled { opacity:0.5; pointer-events:none; }
   .wm-right { flex:1; display:flex; flex-direction:column; gap:18px; min-width:0; }
   .wm-desc { font-family:'Evolventa',sans-serif; font-size:16px; line-height:1.75; color:#333; margin:0; }
   .wm-desc mark { background:none; color:inherit; padding:0; }
@@ -1323,7 +1337,7 @@
     }
     .wm-main-img { aspect-ratio: unset; }
     .wm-main-img img { height: auto; object-fit: initial; }
-    .wm-gallery-thumb { height: 40px; }
+    .wm-gallery-thumb { flex:0 0 40px; width:40px; height:40px; }
     .wm-right { gap: 12px; }
     .wm-desc  { font-size: 14px; line-height: 1.65; }
     .wm-gallery-thumbs { gap: 6px; }
@@ -1568,10 +1582,17 @@
       }
       thumbsHtml += '</div>';
     }
+    const arrows = w.imgs > 1
+      ? '<button class="wm-arrow prev disabled" aria-label="Назад"><img src="Left.svg" alt=""></button>' +
+        '<button class="wm-arrow next" aria-label="Вперёд"><img src="Right.svg" alt=""></button>'
+      : '';
     const desc = w.text ? '<p class="wm-desc">' + w.text + '</p>' : '';
     return '<div class="wm-body">' +
       '<div class="wm-left">' +
-        '<div class="wm-main-img"><img src="' + base + 'work-1.png" alt="' + w.title + '" class="wm-main-img-el"></div>' +
+        '<div class="wm-main-img">' +
+          arrows +
+          '<img src="' + base + 'work-1.png" alt="' + w.title + '" class="wm-main-img-el">' +
+        '</div>' +
         thumbsHtml +
       '</div>' +
       '<div class="wm-right">' + desc + '</div>' +
@@ -1602,14 +1623,39 @@
     );
   });
 
+  function updateArrows(modal) {
+    const thumbs = Array.from(modal.querySelectorAll('.wm-gallery-thumb'));
+    if (!thumbs.length) return;
+    const idx = thumbs.findIndex(t => t.classList.contains('active'));
+    const prev = modal.querySelector('.wm-arrow.prev');
+    const next = modal.querySelector('.wm-arrow.next');
+    if (prev) prev.classList.toggle('disabled', idx === 0);
+    if (next) next.classList.toggle('disabled', idx === thumbs.length - 1);
+  }
+
+  function activateThumb(modal, thumb) {
+    modal.querySelector('.wm-main-img-el').src = thumb.dataset.src;
+    modal.querySelectorAll('.wm-gallery-thumb').forEach(t => t.classList.remove('active'));
+    thumb.classList.add('active');
+    updateArrows(modal);
+  }
+
   document.addEventListener('click', e => {
     if (e.target.closest('.wm-close')) { closeModal(); return; }
+
+    const arrow = e.target.closest('.wm-arrow');
+    if (arrow) {
+      const modal = arrow.closest('.w-modal');
+      const thumbs = Array.from(modal.querySelectorAll('.wm-gallery-thumb'));
+      const idx = thumbs.findIndex(t => t.classList.contains('active'));
+      const next = arrow.classList.contains('next') ? idx + 1 : idx - 1;
+      if (next >= 0 && next < thumbs.length) activateThumb(modal, thumbs[next]);
+      return;
+    }
+
     const thumb = e.target.closest('.wm-gallery-thumb');
     if (thumb) {
-      const modal = thumb.closest('.w-modal');
-      modal.querySelector('.wm-main-img-el').src = thumb.dataset.src;
-      modal.querySelectorAll('.wm-gallery-thumb').forEach(t => t.classList.remove('active'));
-      thumb.classList.add('active');
+      activateThumb(thumb.closest('.w-modal'), thumb);
     }
   });
   document.getElementById('modalOverlay').addEventListener('click', closeModal);
