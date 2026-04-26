@@ -2039,8 +2039,8 @@
       <label class="cf-label" for="cf-name">Имя</label>
       <input class="cf-field" type="text" id="cf-name" name="name" placeholder="Ваше имя" required>
 
-      <label class="cf-label" for="cf-email">Telegram</label>
-      <input class="cf-field" type="text" id="cf-email" name="email" placeholder="@name_tg" required>
+      <label class="cf-label" for="cf-tg">Telegram</label>
+      <input class="cf-field" type="text" id="cf-tg" name="tg" placeholder="@name_tg" required>
 
       <label class="cf-label" for="cf-msg">Сообщение</label>
       <textarea class="cf-field cf-textarea" id="cf-msg" name="message" placeholder="Расскажите о проекте..." required></textarea>
@@ -2079,7 +2079,7 @@
     btn.textContent = 'Отправляю...';
 
     const name    = document.getElementById('cf-name').value.trim();
-    const email   = document.getElementById('cf-email').value.trim();
+    const email   = document.getElementById('cf-tg').value.trim();
     const message = document.getElementById('cf-msg').value.trim();
 
     fetch('https://hidden-breeze-7846.maulaviyevadesign.workers.dev', {
